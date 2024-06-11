@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grady Booch's History of Computing Timeline</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .line {
+            vertical-align: middle;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .historyImg {
+            height: 42px;
+            width: 42px;
+            object-fit: cover;
+            filter: grayscale(0.7);
+            border: 1px solid #c3c3c3;
+            margin: 2px;
+            padding: 2px;
+            vertical-align: middle;
+            background-color: white;
+        }
+
+        .logo {
+            height: 42px;
+            border-radius: 5px;
+        }
+
+        .logo-cell {
+            vertical-align: middle;
+            background-color: white;
+            padding-right: 10px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .book {
+            object-fit: cover;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .year {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-left: 10px;
+            vertical-align: top;
+            color: crimson;
+        }
+
+        .cover {
+            width: 100px;
+            height: 133px;
+            object-fit: cover;
+            display: inline-block;
+            border: 1px solid #d0d0d0;
+        }
+
+        .big-cover {
+            width: 220px;
+            height: 300px;
+            object-fit: cover;
+            display: inline-block;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            border-radius: 9px;
+            vertical-align: top;
+        }
+
+        .title {
+            height: calc(2em + 4px);
+            min-height: calc(2em + 4px);
+            max-height: calc(2em + 4px);
+            overflow: hidden;
+            font-size: 90%;
+            width: 220px;
+            text-align: center;
+            margin-top: 6px;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    function openFile(id) {
+        window.location = id + '.html';
+    }
+
+</script>
+<div style="margin-left: 23px; margin-bottom: 20px;">
+    <div style="margin-left: 3px;">
+        <h1 style="font-size: 70px; margin-bottom: 10px; margin-left: 6px">
+            <img src="logo.png" style="vertical-align: middle; height: 120px">
+            <div style="display: inline-block; vertical-align: middle; padding-left: 12px">
+                <b style="padding-top: 20px; ">Booch's History of Computing</b>
+                <p style="font-size: 17px">Based on <a href="https://twitter.com/Grady_Booch" target="_blank"
+                                                       style="color: #a0a0a0;">Grady Booch's</a>
+                    <a target="_blank"
+                       style="color: #a0a0a0;"
+                       href="https://computingthehumanexperience.com/"> history of computing</a>, an intersection of
+                    computing and what it means to be human.</p>
+            </div>
+        </h1>
+    </div>
+
+    <div class="tab">
+        <button class="tablinks" id="tab_people" onclick="openFile('people')">People (2<sup>9</sup>)</button>
+        <button class="tablinks" id="tab_artifacts" onclick="openFile('artifacts')">Artifacts (2<sup>8</sup>)</button>
+        <button class="tablinks" id="tab_orgs" onclick="openFile('orgs')">Organizations (2<sup>7</sup>)</button>
+        <button class="tablinks" id="tab_all" onclick="openFile('all')">Everything (2<sup>9</sup>+2<sup>8</sup>+2<sup>7</sup>)
+        </button>
+        <button class="tablinks" onclick="openFile('places')">Countries (46<sup>1</sup>)</button>
+    </div>
+
+    <script>
+        const path = window.location.pathname;
+        const page = path.split("/").pop();
+
+        if (page === 'people.html') document.getElementById('tab_people').classList.add('active');
+        if (page === 'artifacts.html') document.getElementById('tab_artifacts').classList.add('active');
+        if (page === 'orgs.html') document.getElementById('tab_orgs').classList.add('active');
+        if (page === 'all.html') document.getElementById('tab_all').classList.add('active');
+    </script>
+
+    <div id="people" class="tabcontent" style="display: block">
+        <div style="margin-left: 30px; margin-bottom: 40px; color: grey; padding-top: 32px">
+            <div>
+                <input id="filter" type="text" placeholder="search entries..."
+                       style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">
+                <div id="summary" style="display: inline-block"></div>
+            </div>
+            <label onclick="update()">
+                <input type="checkbox" id="group-by-year" checked style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">group by year</div>
+            </label>
+            &nbsp;&nbsp;&nbsp;
+            <label onclick="update()">
+                <input type="checkbox" id="show-details" checked style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">show title</div>
+            </label>
+            &nbsp;&nbsp;&nbsp;
+            <label onclick="update()">
+                <input type="checkbox" id="overview" style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">show as a visual overview</div>
+            </label>
+        </div>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        function flagImageOf(place) {
+            let code = 'un';
+
+            if (place.includes('United States')) code = 'us';
+            else if (place.includes('California')) code = 'us';
+            else if (place.includes('New York')) code = 'us';
+            else if (place.includes('Tennessee')) code = 'us';
+            else if (place.includes('Illinois')) code = 'us';
+            else if (place.includes('Florida')) code = 'us';
+            else if (place.includes('Seattle')) code = 'us';
+            else if (place.includes('Michigan')) code = 'us';
+            else if (place.includes('Washington')) code = 'us';
+            else if (place.includes('North Carolina')) code = 'us';
+            else if (place.includes('Texas')) code = 'us';
+            else if (place.includes('New Hampshire')) code = 'us';
+            else if (place.includes('Colorado')) code = 'us';
+            else if (place.includes('Georgia')) code = 'us';
+            else if (place.includes('Delaware')) code = 'us';
+            else if (place.includes('Utah')) code = 'us';
+            else if (place.includes('Alabama')) code = 'us';
+            else if (place.includes('New Mexico')) code = 'us';
+            else if (place.includes('Massachusetts')) code = 'us';
+            else if (place.includes('Pennsylvania')) code = 'us';
+            else if (place.includes('New Jersey')) code = 'us';
+            else if (place.includes('Cambridge')) code = 'us';
+            else if (place.includes('Virginia')) code = 'us';
+            else if (place.includes('Missouri')) code = 'us';
+            else if (place.includes('Oregon')) code = 'us';
+            else if (place.includes('Mississippi')) code = 'us';
+            else if (place.includes('Arizona')) code = 'us';
+            else if (place.includes('Wisconsin')) code = 'us';
+            else if (place.includes('Minnesota')) code = 'us';
+            else if (place.includes('Connecticut')) code = 'us';
+            else if (place.includes('South Dakota')) code = 'us';
+            else if (place.includes('Louisiana')) code = 'us';
+            else if (place.includes('Nebraska')) code = 'us';
+            else if (place.includes('14610')) code = 'us';
+            else if (place.includes('Kentucky')) code = 'us';
+            else if (place.includes('Maryland')) code = 'us';
+            else if (place.includes('Rhode Island')) code = 'us';
+            else if (place.includes('Iowa')) code = 'us';
+            else if (place.includes('Ohio')) code = 'us';
+            else if (place.includes('Kansas')) code = 'us';
+            else if (place.includes('Hawaii')) code = 'us';
+            else if (place.includes('Israel')) code = 'il';
+            else if (place.includes('Italy')) code = 'it';
+            else if (place.includes('France')) code = 'fr';
+            else if (place.includes('Canada')) code = 'ca';
+            else if (place.includes('Japan')) code = 'jp';
+            else if (place.includes('Netherlands')) code = 'nl';
+            else if (place.includes('Holland')) code = 'nl';
+            else if (place.includes('China')) code = 'cn';
+            else if (place.includes('India')) code = 'in';
+            else if (place.includes('Finland')) code = 'fi';
+            else if (place.includes('Switzerland')) code = 'ch';
+            else if (place.includes('Ireland')) code = 'ir';
+            else if (place.includes('Russia')) code = 'ru';
+            else if (place.includes('England')) code = 'gb';
+            else if (place.includes('Scotland')) code = 'gb';
+            else if (place.includes('Greece')) code = 'gr';
+            else if (place.includes('Iraq')) code = 'ir';
+            else if (place.includes('Abbasid')) code = 'ir';
+            else if (place.includes('Turkey')) code = 'tr';
+            else if (place.includes('Germany')) code = 'de';
+            else if (place.includes('Majorca')) code = 'es';
+            else if (place.includes('Spain')) code = 'es';
+            else if (place.includes('Uzbekistan')) code = 'uz';
+            else if (place.includes('Europe')) code = 'eu';
+            else if (place.includes('Ukraine')) code = 'ua';
+            else if (place.includes('Taiwan')) code = 'tw';
+            else if (place.includes('Poland')) code = 'pl';
+            else if (place.includes('Mexico')) code = 'mx';
+            else if (place.includes('Romania')) code = 'ro';
+            else if (place.includes('Hungary')) code = 'hu';
+            else if (place.includes('Czech')) code = 'cz';
+            else if (place.includes('Austria')) code = 'at';
+            else if (place.includes('Azerbaijan')) code = 'az';
+            else if (place.includes('Norway')) code = 'no';
+            else if (place.includes('Denmark')) code = 'dk';
+            else if (place.includes('Latvia')) code = 'lv';
+            else if (place.includes('South Africa')) code = 'za';
+            else if (place.includes('Palestine')) code = 'ps';
+            else if (place.includes('Venezuela')) code = 've';
+            else if (place.includes('Venezula')) code = 've';
+            else if (place.includes('Vietnam')) code = 've';
+            else if (place.includes('South Korea')) code = 'vn';
+            else if (place.includes('New Zealand')) code = 'nz';
+            else if (place.includes('Singapore')) code = 'sg';
+            else if (place.includes('Portugal')) code = 'pt';
+            else if (place.includes('Australia')) code = 'au';
+            else if (place.includes('Sri Lanka')) code = 'lk';
+            else if (place.includes('Belgium')) code = 'be';
+            else if (place.includes('Sweden')) code = 'se';
+            else if (place.includes('Greenland')) code = 'gl';
+            else if (place.includes('Thailand')) code = 'th';
+
+            return 'https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/' + code + '.svg';
+        }
+
+        function placeOf(item) {
+            const places = [];
+            const placesMap = {};
+
+            const add = (place) => {
+                if (place && place.toLowerCase() !== 'unknown' && place.toLowerCase() !== 'unnown' && placesMap[place] !== null) {
+                    places.push(place);
+                    placesMap[place] = true;
+                }
+            }
+
+            add(item.summary.Birthplace);
+            add(item.summary.Place);
+            add(item.summary.Nationality);
+            add(item.summary['Place of death']);
+
+            return places;
+        }
+    </script>
+
+    <script>
+        const books = ${data};
+
+        function update() {
+            let html = '<div style="margin: 20px;">';
+            let prevYear = null;
+            const overview = document.getElementById('overview').checked;
+            const showDetails = document.getElementById('show-details').checked && !overview;
+            const filter = document.getElementById('filter').value;
+            const byYear = document.getElementById('group-by-year').checked && !overview;
+            let count = 0;
+            const yearsMap = {};
+            const years = [];
+
+            books.filter(item => {
+                return !filter || filter === '' || (item.title + ' ' + item.summary.Summary + ' ' + item.year).toLowerCase().includes(filter.toLowerCase());
+            })
+                .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+                .forEach(item => {
+                    const year = item.year;
+
+                    if (!yearsMap[year]) {
+                        yearsMap[year] = {
+                            year,
+                            items: []
+                        }
+                        years.push(yearsMap[year]);
+                    }
+
+                    yearsMap[year].items.push(item);
+                });
+
+            years.sort((a, b) => parseInt(b.year) - parseInt(a.year))
+                .forEach(function (yearObject) {
+                    if (showDetails) {
+                        html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: -10px; margin: 4px;  overflow: hidden">';
+                        html += '<div class="year" style="margin-top: 8px;">';
+                        html += Math.abs(yearObject.year) + (yearObject.year < 0 ? ' BC' : '');
+                        html += '</div>';
+                    }
+                    yearObject.items
+                        .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+                        .forEach(function (book) {
+                            count += 1;
+                            const year = parseInt(yearObject.year);
+                            if (showDetails) {
+                                html += '<div style="display: inline-block; max-height: 420px; height: 420px; overflow: hidden">';
+                            }
+                            let info = book.title + '\n\n' + book.summary.Summary;
+                            html += '<a target="_blank" href="' + book.links[0].path + '" style="vertical-align: top">';
+                            html += '<div class="book" title="' + info + '">';
+                            const coverImage = book.imagePath ? book.imagePath : 'book.png';
+                            if (overview) {
+                                html += '<img class="cover" src="images/' + coverImage + '">';
+                            } else {
+                                html += '<img class="big-cover" src="images/' + coverImage + '">';
+                            }
+                            if (showDetails) {
+                                html += '<div style="vertical-align: middle; white-space: nowrap; margin-top: -36px;  text-align: right; height: 42px;"> ';
+                                let places = placeOf(book);
+                                if (places.length > 0) {
+                                    html += '<div style="display: inline-block; font-size: 80%; color: grey; width: 220px; margin-bottom: 7px; text-align: right; margin-right: 18px">';
+                                    const flagMap = {};
+                                    places.forEach(place => {
+                                        let flag = flagImageOf(place);
+                                        if (!flagMap[flag]) {
+                                            html += '<img src="' + flag + '" style="width: 32px; vertical-align: middle; border: 1px solid #d0d0d0; margin-rigth: 4px; border-radius: 3px;">&nbsp;&nbsp;&nbsp;';
+                                            flagMap[flag] = true;
+                                        }
+                                    });
+                                    html += '</div>';
+                                }
+                                html += '</div>';
+                                html += '<div class="title" style="margin-top: 4px">';
+                                html += book.title;
+                                html += '</div>';
+                                html += '<div style="font-size: 80%; color: grey; width: 220px; margin-top: -16px; margin-bottom: 10px; text-align: center">';
+                                html += book.summary.Description;
+                                html += '</div>';
+                            }
+                            html += '</div>';
+                            html += '</a>';
+                            if (showDetails) {
+                                html += '</div>';
+                            }
+                        });
+                    if (showDetails) {
+                        html += '</div>';
+                    }
+                });
+            html += ('</div>');
+
+            document.getElementById('summary').innerHTML = ' = <b>' + count + '</b> ' + (count === 1 ? ' entry' : ' entries') + ''
+
+            const div = document.getElementById('content');
+            div.innerHTML = html;
+        }
+
+        update();
+    </script>
+    <div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+        generated on ${date} based on this source
+        <a target="_blank" style="color: #a0a0a0;"
+           href="https://docs.google.com/spreadsheets/d/1DTQJSygQGP3m74sWdRSt7Tv13NGOAWJBBriZu8Aoe-4/edit?usp=sharing">
+            data sheet</a>
+    </div>
+</div>
+</body>
+</html>

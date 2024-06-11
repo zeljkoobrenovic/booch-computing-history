@@ -1,0 +1,143 @@
+Yorktown Heights, New York
+Ithica, New York
+Washington, D.C.
+Tokyo, Japan
+Atlanta, Georgia
+Berkeley, California
+Holmdel, New Jersey
+Seoul, South Korea
+Cambridge, England
+Cambridge, Massachusetts
+Los Angeles, California
+Moscow, Russia
+Endicott, New York
+Cary, North Carolina
+Philadelphia, Pennsylvania
+Pittsburgh, Pennsylvania
+London, England
+Paris, France
+Piscataway, New Jersey
+Albury, England
+Hanover, New Hampshire
+Morristown, Pennsylvania
+Haifa, Israel
+Weinheim, Germany
+Urbana, Illinois
+Redmond, Washington
+Palo Alto, California
+Edinburgh, Scotland
+Santa Clara, California
+Ontario, Canada
+Princeton, New Jersey
+Geneva, Switzerland
+Nashua, New Hampshire
+Dallas, Texas
+Europe
+Danbury, Connecticut
+Schaumburg, Illinois
+Syracuse, New York
+Los Gatos, California
+Kingston, New York
+San Diego, California
+Menlo Park, California
+Morris Plains, New Jersey
+Poughkeepsie, New York
+Seattle, Washington
+West Chester, Pennsylvania
+La Hulpe, Belgium
+San Francisco, California
+Amsterdam, Netherlands
+Ames, Iowa
+Maynard, Massachusetts
+Chapel Hill, North Carolina
+Feofanyia, Russia
+Brentwood, England
+San Jose, California
+Ivera, Italy
+Taipai, Taiwan
+New York City, New York
+Guandong, China
+Bloomington, Minnesota
+France
+Champaign, Illinois
+Austin, Texas
+Cupertino, California
+Great Neck, New York
+Sunnyvale, California
+Gaithersburg, Maryland,
+Burnaby, Canada
+Plymouth, Michigan
+Harwell, England
+Yamato, Japan
+Stanford, California
+San Rafael, California
+Greece
+Santa Monica, California
+Milpitas, California
+Mountain View, California
+San Leandro, California
+Noida, India
+Thatcher, Arizona
+Beijing, China
+Minneapolis, Minnesota
+Manchester, England
+United States
+Ivrea, Italy
+Germany
+Baltimore, Maryland
+Berlin, Germany
+Redwood Shores, California
+San Antonio, Texas
+San Mateo, California
+Oslo, Norway
+New Taipai, Taiwan
+Stockholm, Sweden
+Zurich, Switzerland
+Hayward, California
+Waltham, Massachusetts
+Fremont, California
+Pasadena, California
+Columbus, Ohio
+Raleigh, North Carolina
+Boston, Massachusetts
+Bletchley Park, England
+Albuquerque, New Mexico
+Mumbai, India
+San Bruno, California
+Helsinki, Finland
+Salt Lake City, Utah
+Toronto, Canada
+Pacific Grove, California
+Emeryville, California
+Shenzhen, China
+Brookfield, Wisconsin
+Arlington, Virginia
+Livermore, California
+Murray Hill, New Jersey
+Lyon, France
+Miami, Florida
+Los Altos, California
+Boca Raton, Florida
+Lake Success, New York
+Redwood City, California
+Boulder, Colorado
+Oak Ridge, Tennessee
+Iraq
+St. Petersburg, Russia
+Norristown, Pennsylvania
+Richardson, Texas
+Briar Cliff Manor, New York
+England
+Dublin, Ireland
+Brentwood, California
+Hangzhou, China
+El Segundo, California
+Fort Worth, Texas
+Jurong West, Singapore
+Baghdad, Iraq
+Round Rock, Texas
+Los Alamos, New Mexico
+Lexington, Massachusetts
+Hsinchu, Taiwan
+Santa Barbara, California
+Chippewa Falls, Wisconsin
