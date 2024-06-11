@@ -371,15 +371,15 @@
                                 html += '<img class="big-cover" src="images/' + coverImage + '">';
                             }
                             if (showDetails) {
-                                html += '<div style="vertical-align: middle; white-space: nowrap; margin-top: 0px;  text-align: right; height: 42px;"> ';
+                                html += '<div style="vertical-align: middle; white-space: nowrap; margin-top: -38px;  text-align: right; height: 46px;"> ';
                                 let places = placeOf(book);
                                 if (places.length > 0) {
-                                    html += '<div style="display: inline-block; font-size: 80%; color: grey; width: 220px; margin-bottom: 7px; text-align: center; margin-right: 18px">';
+                                    html += '<div style="display: inline-block; font-size: 80%; color: grey; width: 220px; margin-bottom: 7px; text-align: right; margin-right: 18px">';
                                     const flagMap = {};
                                     places.forEach(place => {
                                         let flag = flagImageOf(place);
                                         if (!flagMap[flag]) {
-                                            html += '<img src="' + flag + '" style="width: 32px; vertical-align: middle; border: 1px solid #d0d0d0; margin: 8px; border-radius: 3px;">&nbsp;&nbsp;&nbsp;';
+                                            html += '<img src="' + flag + '" style="width: 32px; vertical-align: middle; border: 1px solid #d0d0d0; margin-right: 4px; border-radius: 3px;">&nbsp;&nbsp;&nbsp;';
                                             flagMap[flag] = true;
                                         }
                                     });
