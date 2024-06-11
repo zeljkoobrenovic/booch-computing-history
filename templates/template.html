@@ -115,14 +115,11 @@
         }
 
         .title {
-            height: calc(2em + 4px);
-            min-height: calc(2em + 4px);
-            max-height: calc(2em + 4px);
             overflow: hidden;
             font-size: 90%;
             width: 220px;
             text-align: center;
-            margin-top: 6px;
+            margin-top: 2px;
             vertical-align: top;
             white-space: nowrap;
         }
@@ -351,7 +348,7 @@
             years.sort((a, b) => parseInt(b.year) - parseInt(a.year))
                 .forEach(function (yearObject) {
                     if (showDetails) {
-                        html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: -10px; margin: 4px;  overflow: hidden">';
+                        html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: 0px; margin: 4px;  overflow: hidden">';
                         html += '<div class="year" style="margin-top: 8px;">';
                         html += Math.abs(yearObject.year) + (yearObject.year < 0 ? ' BC' : '');
                         html += '</div>';
@@ -374,25 +371,25 @@
                                 html += '<img class="big-cover" src="images/' + coverImage + '">';
                             }
                             if (showDetails) {
-                                html += '<div style="vertical-align: middle; white-space: nowrap; margin-top: -36px;  text-align: right; height: 42px;"> ';
+                                html += '<div style="vertical-align: middle; white-space: nowrap; margin-top: 0px;  text-align: right; height: 42px;"> ';
                                 let places = placeOf(book);
                                 if (places.length > 0) {
-                                    html += '<div style="display: inline-block; font-size: 80%; color: grey; width: 220px; margin-bottom: 7px; text-align: right; margin-right: 18px">';
+                                    html += '<div style="display: inline-block; font-size: 80%; color: grey; width: 220px; margin-bottom: 7px; text-align: center; margin-right: 18px">';
                                     const flagMap = {};
                                     places.forEach(place => {
                                         let flag = flagImageOf(place);
                                         if (!flagMap[flag]) {
-                                            html += '<img src="' + flag + '" style="width: 32px; vertical-align: middle; border: 1px solid #d0d0d0; margin-rigth: 4px; border-radius: 3px;">&nbsp;&nbsp;&nbsp;';
+                                            html += '<img src="' + flag + '" style="width: 32px; vertical-align: middle; border: 1px solid #d0d0d0; margin: 8px; border-radius: 3px;">&nbsp;&nbsp;&nbsp;';
                                             flagMap[flag] = true;
                                         }
                                     });
                                     html += '</div>';
                                 }
                                 html += '</div>';
-                                html += '<div class="title" style="margin-top: 4px">';
+                                html += '<div class="title" style="margin-top: 0px; margin-bottom: 0; padding: 0">';
                                 html += book.title;
                                 html += '</div>';
-                                html += '<div style="font-size: 80%; color: grey; width: 220px; margin-top: -16px; margin-bottom: 10px; text-align: center">';
+                                html += '<div style="font-size: 80%; color: grey; width: 220px; margin-top: 0px; margin-bottom: 10px; text-align: center">';
                                 html += book.summary.Description;
                                 html += '</div>';
                             }
