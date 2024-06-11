@@ -26,7 +26,7 @@
             cursor: pointer;
             padding: 14px 16px;
             transition: 0.3s;
-            font-size: 17px;
+            font-size: 107%;
         }
 
         .tab button:hover {
@@ -154,12 +154,11 @@
     </div>
 
     <div class="tab">
-        <button class="tablinks" id="tab_people" onclick="openFile('people')">People (2<sup>9</sup>)</button>
-        <button class="tablinks" id="tab_artifacts" onclick="openFile('artifacts')">Artifacts (2<sup>8</sup>)</button>
-        <button class="tablinks" id="tab_orgs" onclick="openFile('orgs')">Organizations (2<sup>7</sup>)</button>
-        <button class="tablinks" id="tab_all" onclick="openFile('all')">Everything (2<sup>9</sup>+2<sup>8</sup>+2<sup>7</sup>)
-        </button>
-        <button class="tablinks" onclick="openFile('places')">Countries (46<sup>1</sup>)</button>
+        <button id="tab_people" onclick="openFile('people')">People (2<sup>9</sup>)</button>
+        <button id="tab_artifacts" onclick="openFile('artifacts')">Artifacts (2<sup>8</sup>)</button>
+        <button id="tab_orgs" onclick="openFile('orgs')">Organizations (2<sup>7</sup>)</button>
+        <button id="tab_all" onclick="openFile('all')">Everything (2<sup>9</sup>+2<sup>8</sup>+2<sup>7</sup>)</button>
+        <button onclick="openFile('places')">Countries (46<sup>1</sup>)</button>
     </div>
 
     <script>
