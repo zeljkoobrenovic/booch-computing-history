@@ -127,7 +127,7 @@
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
 </head>
-<body>
+<body style="width: 100%">
 <script>
     function openFile(id) {
         window.location = id + '.html';
@@ -359,7 +359,7 @@
                             count += 1;
                             const year = parseInt(yearObject.year);
                             if (showDetails) {
-                                html += '<div style="display: inline-block; max-height: 420px; height: 420px; overflow: hidden">';
+                                html += '<div style="display: inline-block;">';
                             }
                             let info = book.title + '\n\n' + book.summary.Summary;
                             html += '<a target="_blank" href="' + book.links[0].path + '" style="vertical-align: top">';

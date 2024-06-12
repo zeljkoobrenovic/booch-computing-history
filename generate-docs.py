@@ -90,27 +90,27 @@ with open('data/data.json', 'w') as html_file:
 dateString = datetime.date.today().strftime('%Y-%m-%d')
 
 with open('docs/all.html', 'w') as html_file:
-     template = open('templates/template.html').read();
+     template = open('templates/template.html').read()
      html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps(events)))
 
 with open('docs/places.html', 'w') as html_file:
-     template = open('templates/places.html').read();
+     template = open('templates/places.html').read()
      html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps(events)))
 
 with open('docs/people.html', 'w') as html_file:
-     template = open('templates/template.html').read();
+     template = open('templates/template.html').read()
      html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'People'])))
 
 with open('docs/orgs.html', 'w') as html_file:
-     template = open('templates/template.html').read();
+     template = open('templates/template.html').read()
      html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'Organizations'])))
 
 with open('docs/artifacts.html', 'w') as html_file:
-     template = open('templates/template.html').read();
+     template = open('templates/template.html').read()
      html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'Artifacts'])))
 
 with open('data/places.txt', 'w') as html_file:
-    text = '';
+    text = ''
     for place in places:
         text += place + '\n'
 
