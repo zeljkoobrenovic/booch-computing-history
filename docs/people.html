@@ -165,28 +165,30 @@
         if (page === 'all.html') document.getElementById('tab_all').classList.add('active');
     </script>
 
-    <div style="margin-left: 30px; margin-bottom: 40px; color: grey; padding-top: 32px">
-        <div>
-            <input id="filter" type="text" placeholder="search entries..."
-                   style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">
-            <div id="summary" style="display: inline-block"></div>
+    <div class="tabcontent">
+        <div style="margin-left: 30px; margin-bottom: 30px; color: grey; padding-top: 30px">
+            <div>
+                <input id="filter" type="text" placeholder="search entries..."
+                       style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">
+                <div id="summary" style="display: inline-block"></div>
+            </div>
+            <label onclick="update()">
+                <input type="checkbox" id="group-by-year" checked style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">group by year</div>
+            </label>
+            &nbsp;&nbsp;&nbsp;
+            <label onclick="update()">
+                <input type="checkbox" id="show-details" checked style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">show title</div>
+            </label>
+            &nbsp;&nbsp;&nbsp;
+            <label onclick="update()">
+                <input type="checkbox" id="overview" style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">show as a visual overview</div>
+            </label>
         </div>
-        <label onclick="update()">
-            <input type="checkbox" id="group-by-year" checked style="width: 18px; height: 18px">
-            <div style="display: inline-block; vertical-align: top; margin-top: 2px">group by year</div>
-        </label>
-        &nbsp;&nbsp;&nbsp;
-        <label onclick="update()">
-            <input type="checkbox" id="show-details" checked style="width: 18px; height: 18px">
-            <div style="display: inline-block; vertical-align: top; margin-top: 2px">show title</div>
-        </label>
-        &nbsp;&nbsp;&nbsp;
-        <label onclick="update()">
-            <input type="checkbox" id="overview" style="width: 18px; height: 18px">
-            <div style="display: inline-block; vertical-align: top; margin-top: 2px">show as a visual overview</div>
-        </label>
+        <div id="content"></div>
     </div>
-    <div id="content"></div>
 
     <script>
         function flagImageOf(place) {
@@ -344,6 +346,9 @@
                 .forEach(function (yearObject) {
                     if (showDetails) {
                         html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: 0px; margin: 4px;">';
+                        html += '<div class="year" style="margin-top: 8px;">';
+                        html += Math.abs(yearObject.year) + (yearObject.year < 0 ? ' BC' : '');
+                        html += '</div>';
                     }
                     yearObject.items
                         .sort((a, b) => parseInt(b.year) - parseInt(a.year))
