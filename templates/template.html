@@ -331,10 +331,10 @@
                     count += 1;
                     const year = parseInt(yearObject.year);
                     if (showDetails) {
-                        html += '<div style="display: inline-block;">';
+                        html += '<div style="display: inline-block; vertical-align: top">';
                     }
                     let info = book.title + '\n\n' + book.summary.Summary;
-                    html += '<a target="_blank" href="' + book.links[0].path + '" style="vertical-align: top">';
+                    html += '<a target="_blank" href="' + book.links[0].path + '">';
                     html += '<div class="book" title="' + info.split('\n').join('&#010;') + '">';
                     const coverImage = book.imagePath ? book.imagePath : 'book.png';
                     if (overview) {
