@@ -125,7 +125,7 @@
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
 </head>
-<body style="width: 100%">
+<body>
 <script>
     function openFile(id) {
         window.location = id + '.html';
@@ -165,30 +165,28 @@
         if (page === 'all.html') document.getElementById('tab_all').classList.add('active');
     </script>
 
-    <div id="people" class="tabcontent" style="display: block">
-        <div style="margin-left: 30px; margin-bottom: 40px; color: grey; padding-top: 32px">
-            <div>
-                <input id="filter" type="text" placeholder="search entries..."
-                       style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">
-                <div id="summary" style="display: inline-block"></div>
-            </div>
-            <label onclick="update()">
-                <input type="checkbox" id="group-by-year" checked style="width: 18px; height: 18px">
-                <div style="display: inline-block; vertical-align: top; margin-top: 2px">group by year</div>
-            </label>
-            &nbsp;&nbsp;&nbsp;
-            <label onclick="update()">
-                <input type="checkbox" id="show-details" checked style="width: 18px; height: 18px">
-                <div style="display: inline-block; vertical-align: top; margin-top: 2px">show title</div>
-            </label>
-            &nbsp;&nbsp;&nbsp;
-            <label onclick="update()">
-                <input type="checkbox" id="overview" style="width: 18px; height: 18px">
-                <div style="display: inline-block; vertical-align: top; margin-top: 2px">show as a visual overview</div>
-            </label>
+    <div style="margin-left: 30px; margin-bottom: 40px; color: grey; padding-top: 32px">
+        <div>
+            <input id="filter" type="text" placeholder="search entries..."
+                   style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">
+            <div id="summary" style="display: inline-block"></div>
         </div>
-        <div id="content"></div>
+        <label onclick="update()">
+            <input type="checkbox" id="group-by-year" checked style="width: 18px; height: 18px">
+            <div style="display: inline-block; vertical-align: top; margin-top: 2px">group by year</div>
+        </label>
+        &nbsp;&nbsp;&nbsp;
+        <label onclick="update()">
+            <input type="checkbox" id="show-details" checked style="width: 18px; height: 18px">
+            <div style="display: inline-block; vertical-align: top; margin-top: 2px">show title</div>
+        </label>
+        &nbsp;&nbsp;&nbsp;
+        <label onclick="update()">
+            <input type="checkbox" id="overview" style="width: 18px; height: 18px">
+            <div style="display: inline-block; vertical-align: top; margin-top: 2px">show as a visual overview</div>
+        </label>
     </div>
+    <div id="content"></div>
 
     <script>
         function flagImageOf(place) {
