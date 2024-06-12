@@ -147,7 +147,7 @@
         </h1>
     </div>
 
-    <div>
+    <div class="tab">
         <button id="tab_people" onclick="openFile('people')">People (2<sup>9</sup>)</button>
         <button id="tab_artifacts" onclick="openFile('artifacts')">Artifacts (2<sup>8</sup>)</button>
         <button id="tab_orgs" onclick="openFile('orgs')">Organizations (2<sup>7</sup>)</button>
@@ -344,9 +344,6 @@
                 .forEach(function (yearObject) {
                     if (showDetails) {
                         html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: 0px; margin: 4px;">';
-                        html += '<div class="year" style="margin-top: 8px;">';
-                        html += Math.abs(yearObject.year) + (yearObject.year < 0 ? ' BC' : '');
-                        html += '</div>';
                     }
                     yearObject.items
                         .sort((a, b) => parseInt(b.year) - parseInt(a.year))
