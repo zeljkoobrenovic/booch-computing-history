@@ -91,7 +91,6 @@
             text-align: center;
             margin-top: 2px;
             vertical-align: top;
-            white-space: nowrap;
         }
     </style>
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
@@ -294,7 +293,6 @@
 
     function update() {
         let html = '<div style="margin: 20px;">';
-        let prevYear = null;
         const overview = document.getElementById('overview').checked;
         const showDetails = document.getElementById('show-details').checked && !overview;
         const filter = document.getElementById('filter').value;
@@ -321,72 +319,70 @@
                 yearsMap[year].items.push(item);
             });
 
-        years.sort((a, b) => parseInt(b.year) - parseInt(a.year))
-            .forEach(function (yearObject) {
-                if (showDetails) {
-                    html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: 0px; margin: 4px;">';
-                    html += '<div class="year" style="margin-top: 8px;">';
-                    html += Math.abs(yearObject.year) + (yearObject.year < 0 ? ' BC' : '');
-                    html += '</div>';
-                }
-                yearObject.items
-                    .sort((a, b) => parseInt(b.year) - parseInt(a.year))
-                    .forEach(function (book) {
-                        count += 1;
-                        const year = parseInt(yearObject.year);
-                        if (showDetails) {
-                            html += '<div style="display: inline-block;">';
-                        }
-                        let info = book.title + '\n\n' + book.summary.Summary;
-                        html += '<a target="_blank" href="' + book.links[0].path + '" style="vertical-align: top">';
-                        html += '<div class="book" title="' + info.split('\n').join('&#010;') + '">';
-                        const coverImage = book.imagePath ? book.imagePath : 'book.png';
-                        if (overview) {
-                            html += '<img class="cover" src="images/' + coverImage + '">';
-                        } else {
-                            html += '<img class="big-cover" src="images/' + coverImage + '">';
-                        }
-                        if (showDetails) {
-                            html += '<div style="vertical-align: middle; white-space: nowrap; margin-top: -38px;  text-align: right; height: 46px;"> ';
-                            let places = placeOf(book);
-                            if (places.length > 0) {
-                                html += '<div style="display: inline-block; font-size: 80%; color: grey; width: 220px; margin-bottom: 7px; text-align: right; margin-right: 18px">';
-                                const flagMap = {};
-                                places.forEach(place => {
-                                    let flag = flagImageOf(place);
-                                    if (!flagMap[flag]) {
-                                        html += '<img src="' + flag + '" style="width: 32px; vertical-align: middle; border: 1px solid #d0d0d0; margin-right: 4px; border-radius: 3px;">&nbsp;&nbsp;&nbsp;';
-                                        flagMap[flag] = true;
-                                    }
-                                });
-                                html += '</div>';
-                            }
-                            html += '</div>';
-                            html += '<div class="title" style="margin-top: 0px; margin-bottom: 0; padding: 0">';
-                            html += book.title;
-                            html += '</div>';
-                            html += '<div style="font-size: 80%; color: grey; width: 220px; margin-top: 0px; margin-bottom: 10px; text-align: center">';
-                            html += book.summary.Description;
+        years.sort((a, b) => parseInt(b.year) - parseInt(a.year)).forEach(function (yearObject) {
+            if (showDetails && byYear) {
+                html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: 0px; margin: 4px;">';
+                html += '<div class="year" style="margin-top: 8px;">';
+                html += Math.abs(yearObject.year) + (yearObject.year < 0 ? ' BC' : '');
+                html += '</div>';
+            }
+            yearObject.items
+                .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+                .forEach(function (book) {
+                    count += 1;
+                    const year = parseInt(yearObject.year);
+                    if (showDetails) {
+                        html += '<div style="display: inline-block;">';
+                    }
+                    let info = book.title + '\n\n' + book.summary.Summary;
+                    html += '<a target="_blank" href="' + book.links[0].path + '" style="vertical-align: top">';
+                    html += '<div class="book" title="' + info.split('\n').join('&#010;') + '">';
+                    const coverImage = book.imagePath ? book.imagePath : 'book.png';
+                    if (overview) {
+                        html += '<img class="cover" src="images/' + coverImage + '">';
+                    } else {
+                        html += '<img class="big-cover" src="images/' + coverImage + '">';
+                    }
+                    if (showDetails) {
+                        html += '<div style="vertical-align: middle; margin-top: -38px;  text-align: right; height: 46px;"> ';
+                        let places = placeOf(book);
+                        if (places.length > 0) {
+                            html += '<div style="display: inline-block; font-size: 80%; color: grey; width: 220px; margin-bottom: 7px; text-align: right; margin-right: 18px">';
+                            const flagMap = {};
+                            places.forEach(place => {
+                                let flag = flagImageOf(place);
+                                if (!flagMap[flag]) {
+                                    html += '<img src="' + flag + '" style="width: 32px; vertical-align: middle; border: 1px solid #d0d0d0; margin-right: 4px; border-radius: 3px;">&nbsp;&nbsp;&nbsp;';
+                                    flagMap[flag] = true;
+                                }
+                            });
                             html += '</div>';
                         }
                         html += '</div>';
-                        html += '</a>';
-                        if (showDetails) {
-                            html += '</div>';
-                        }
-                    });
-                if (showDetails) {
+                        html += '<div class="title" style="margin-top: 0px; margin-bottom: 0; padding: 0">';
+                        html += book.title;
+                        html += '</div>';
+                        html += '<div style="font-size: 80%; color: grey; width: 220px; margin-top: 0px; margin-bottom: 10px; text-align: center">';
+                        html += book.summary.Description;
+                        html += '</div>';
+                    }
                     html += '</div>';
-                }
-            });
-        html += ('</div>');
+                    html += '</a>';
+                    if (showDetails) {
+                        html += '</div>';
+                    }
+                });
+            if (showDetails && byYear) {
+                html += '</div>';
+            }
+        });
+
+        html += '</div>';
 
         document.getElementById('summary').innerHTML = ' = <b>' + count + '</b> ' + (count === 1 ? ' entry' : ' entries') + ''
 
         const div = document.getElementById('content');
         div.innerHTML = html;
-
-        console.log(html);
     }
 
     update();
