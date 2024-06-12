@@ -115,7 +115,6 @@
         }
 
         .title {
-            overflow: hidden;
             font-size: 90%;
             width: 220px;
             text-align: center;
@@ -347,7 +346,7 @@
             years.sort((a, b) => parseInt(b.year) - parseInt(a.year))
                 .forEach(function (yearObject) {
                     if (showDetails) {
-                        html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: 0px; margin: 4px;  overflow: hidden">';
+                        html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: 0px; margin: 4px;">';
                         html += '<div class="year" style="margin-top: 8px;">';
                         html += Math.abs(yearObject.year) + (yearObject.year < 0 ? ' BC' : '');
                         html += '</div>';
