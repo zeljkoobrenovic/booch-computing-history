@@ -8,12 +8,36 @@ images_root = 'https://computingthehumanexperience.com/wp-content/themes/valeriy
 
 # data
 data = json.load(open('data/timeline.json'))
-raw_events = data['eventUpdates']
+concepts = json.load(open('data/concepts.json'))
+
 events = []
+
+for concept in concepts:
+    events.append(
+        {
+            'title': concept['concept'],
+            'type': 'Concepts',
+            'imagePath': concept['file_path'],
+            'year': concept['year'],
+            'summary': {
+                'Summary': 'Place: ' + concept['place'] + '\n\n' + concept['description'],
+                'Place': concept['place'],
+                'Description': concept['description']
+            },
+            "links": [
+                {
+                    "path": concept['link']
+                }
+            ]
+        }
+    )
+
+raw_events = data['eventUpdates']
 
 titles_map = {}
 places_map = {}
 places = []
+
 
 def add_place(item):
     if item['summary'].get('Place'):
@@ -83,31 +107,34 @@ for raw_event in raw_events:
             print('downloading ' + image_file)
             handler.write(img_data)
 
-
 with open('data/data.json', 'w') as html_file:
     html_file.write(json.dumps(events))
 
 dateString = datetime.date.today().strftime('%Y-%m-%d')
 
 with open('docs/all.html', 'w') as html_file:
-     template = open('templates/template.html').read()
-     html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps(events)))
+    template = open('templates/template.html').read()
+    html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps(events)))
 
 with open('docs/places.html', 'w') as html_file:
-     template = open('templates/places.html').read()
-     html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps(events)))
+    template = open('templates/places.html').read()
+    html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps(events)))
 
 with open('docs/people.html', 'w') as html_file:
-     template = open('templates/template.html').read()
-     html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'People'])))
+    template = open('templates/template.html').read()
+    html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'People'])))
 
 with open('docs/orgs.html', 'w') as html_file:
-     template = open('templates/template.html').read()
-     html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'Organizations'])))
+    template = open('templates/template.html').read()
+    html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'Organizations'])))
 
 with open('docs/artifacts.html', 'w') as html_file:
-     template = open('templates/template.html').read()
-     html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'Artifacts'])))
+    template = open('templates/template.html').read()
+    html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'Artifacts'])))
+
+with open('docs/concepts.html', 'w') as html_file:
+    template = open('templates/template.html').read()
+    html_file.write(template.replace('${date}', dateString).replace('${data}', json.dumps([p for p in events if p['type'] == 'Concepts'])))
 
 with open('data/places.txt', 'w') as html_file:
     text = ''
@@ -115,4 +142,3 @@ with open('data/places.txt', 'w') as html_file:
         text += place + '\n'
 
     html_file.write(text)
-

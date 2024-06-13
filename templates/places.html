@@ -90,7 +90,8 @@
             <button onclick="openFile('people')">People (2<sup>9</sup>)</button>
             <button onclick="openFile('artifacts')">Artifacts (2<sup>8</sup>)</button>
             <button onclick="openFile('orgs')">Organizations (2<sup>7</sup>)</button>
-            <button onclick="openFile('all')">Everything (2<sup>9</sup>+2<sup>8</sup>+2<sup>7</sup>)
+            <button id="tab_concepts" onclick="openFile('concepts')">Concepts (2<sup>6</sup>)</button>
+            <button onclick="openFile('all')">Everything (2<sup>9</sup>+2<sup>8</sup>+2<sup>7</sup>+2<sup>6</sup>)
             </button>
             <button class="tablinks active" onclick="openFile('places')">Countries (46<sup>1</sup>)</button>
         </div>
@@ -175,6 +176,7 @@
             else if (place.includes('Russia')) code = 'ru';
             else if (place.includes('England')) code = 'gb';
             else if (place.includes('Scotland')) code = 'gb';
+            else if (place.includes('United Kingdom')) code = 'gb';
             else if (place.includes('Greece')) code = 'gr';
             else if (place.includes('Iraq')) code = 'ir';
             else if (place.includes('Abbasid')) code = 'ir';

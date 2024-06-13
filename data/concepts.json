@@ -1,0 +1,514 @@
+[
+  {
+    "concept": "Abstraction",
+    "file_path": "abstraction.jpg",
+    "link": "https://en.wikipedia.org/wiki/Abstraction_(computer_science)",
+    "year": "1950",
+    "place": "United States",
+    "description": "Simplifying complex systems by focusing on high-level concepts and hiding lower-level details."
+  },
+  {
+    "concept": "Algorithm",
+    "file_path": "algorithm.jpg",
+    "link": "https://en.wikipedia.org/wiki/Algorithm",
+    "year": "825",
+    "place": "Persia",
+    "description": "A step-by-step procedure or set of rules for solving a problem or performing a task."
+  },
+  {
+    "concept": "Analog",
+    "file_path": "analog.jpg",
+    "link": "https://en.wikipedia.org/wiki/Analog_signal",
+    "year": "1830",
+    "place": "United Kingdom",
+    "description": "Continuously varying signals that represent physical quantities."
+  },
+  {
+    "concept": "Artificial Intelligence",
+    "file_path": "artificial-intelligence.jpg",
+    "link": "https://en.wikipedia.org/wiki/Artificial Intelligence",
+    "year": "1950",
+    "place": "United Kingdom",
+    "description": "The simulation of human intelligence in machines that are programmed to think and learn."
+  },
+  {
+    "concept": "Augmented Reality",
+    "file_path": "augmented-reality.jpg",
+    "link": "https://en.wikipedia.org/wiki/Augmented Reality",
+    "year": "1960",
+    "place": "United States",
+    "description": "An interactive experience where digital information is overlaid onto the real world."
+  },
+  {
+    "concept": "Bekenstein Bound",
+    "file_path": "bekenstein-bound.jpg",
+    "link": "https://en.wikipedia.org/wiki/Bekenstein Bound",
+    "year": "1981",
+    "place": "Mexico",
+    "description": "A limit on the amount of information that can be contained within a given finite region of space."
+  },
+  {
+    "concept": "Binary Number",
+    "file_path": "binary-number.jpg",
+    "link": "https://en.wikipedia.org/wiki/Binary_number",
+    "year": "1670",
+    "place": "Germany",
+    "description": "A number expressed in the base-2 numeral system, using only 0 and 1."
+  },
+  {
+    "concept": "Boolean Algebra",
+    "file_path": "boolean-algebra.jpg",
+    "link": "https://en.wikipedia.org/wiki/Boolean Algebra",
+    "year": "1854",
+    "place": "United Kingdom",
+    "description": "A branch of algebra involving variables with two possible values, true or false, and operations like AND, OR, and NOT."
+  },
+  {
+    "concept": "Bug",
+    "file_path": "bug.jpg",
+    "link": "https://en.wikipedia.org/wiki/Bug",
+    "year": "1947",
+    "place": "United States",
+    "description": "An error or flaw in software or hardware that causes it to produce incorrect or unexpected results."
+  },
+  {
+    "concept": "Central Processing Unit",
+    "file_path": "central-processing-unit.jpg",
+    "link": "https://en.wikipedia.org/wiki/Central Processing Unit",
+    "year": "1955",
+    "place": "United States",
+    "description": "The primary component of a computer that performs most of the processing inside a computer."
+  },
+  {
+    "concept": "Cloud Computing",
+    "file_path": "cloud-computing.jpg",
+    "link": "https://en.wikipedia.org/wiki/Cloud Computing",
+    "year": "2006",
+    "place": "United States",
+    "description": "The delivery of computing services over the internet, including storage, processing, and software, on a pay-as-you-go basis."
+  },
+  {
+    "concept": "Complexity",
+    "file_path": "complexity.jpg",
+    "link": "https://en.wikipedia.org/wiki/Complexity",
+    "year": "1960",
+    "place": "United States",
+    "description": "The degree to which a system or problem is complicated and difficult to understand or solve."
+  },
+  {
+    "concept": "Compression",
+    "file_path": "compression.jpg",
+    "link": "https://en.wikipedia.org/wiki/Compression",
+    "year": "1950",
+    "place": "United States",
+    "description": "Reducing the size of data for storage or transmission efficiency."
+  },
+  {
+    "concept": "Computability",
+    "file_path": "computability.jpg",
+    "link": "https://en.wikipedia.org/wiki/Computability",
+    "year": "1936",
+    "place": "United Kingdom",
+    "description": "The ability of a problem to be solved by a computer algorithm."
+  },
+  {
+    "concept": "Computational Thinking",
+    "file_path": "computational-thinking.jpg",
+    "link": "https://en.wikipedia.org/wiki/Computational Thinking",
+    "year": "2006",
+    "place": "United States",
+    "description": "Problem-solving that involves formulating problems and solutions in a way that a computer can execute."
+  },
+  {
+    "concept": "Computer",
+    "file_path": "computer.jpg",
+    "link": "https://en.wikipedia.org/wiki/Computer",
+    "year": "1940",
+    "place": "United Kingdom",
+    "description": "An electronic device that processes data according to instructions stored in its memory."
+  },
+  {
+    "concept": "Computer Architecture",
+    "file_path": "computer-architecture.jpg",
+    "link": "https://en.wikipedia.org/wiki/Computer Architecture",
+    "year": "1940",
+    "place": "United Kingdom",
+    "description": "The design and organization of a computer's core components, including the CPU, memory, and input/output systems."
+  },
+  {
+    "concept": "Computing",
+    "file_path": "computing.jpg",
+    "link": "https://en.wikipedia.org/wiki/Computing",
+    "year": "1940",
+    "place": "United Kingdom",
+    "description": "The use of computers to process information or perform tasks."
+  },
+  {
+    "concept": "Concurrency",
+    "file_path": "concurrency.jpg",
+    "link": "https://en.wikipedia.org/wiki/Concurrency",
+    "year": "1960",
+    "place": "United States",
+    "description": "The execution of multiple sequences of operations simultaneously within a computing system."
+  },
+  {
+    "concept": "Data Structure",
+    "file_path": "data-structure.jpg",
+    "link": "https://en.wikipedia.org/wiki/Data Structure",
+    "year": "1950",
+    "place": "United States",
+    "description": "A specific way of organizing and storing data in a computer so that it can be accessed and modified efficiently."
+  },
+  {
+    "concept": "Database",
+    "file_path": "database.jpg",
+    "link": "https://en.wikipedia.org/wiki/Database",
+    "year": "1960",
+    "place": "United States",
+    "description": "An organized collection of data that can be easily accessed, managed, and updated."
+  },
+  {
+    "concept": "Decomposition",
+    "file_path": "decomposition.jpg",
+    "link": "https://en.wikipedia.org/wiki/Decomposition",
+    "year": "1950",
+    "place": "United States",
+    "description": "Breaking down a complex problem into smaller, more manageable parts."
+  },
+  {
+    "concept": "Deterministic System",
+    "file_path": "deterministic-system.jpg",
+    "link": "https://en.wikipedia.org/wiki/Deterministic System",
+    "year": "1950",
+    "place": "United States",
+    "description": "A system in which no randomness is involved in the development of future states."
+  },
+  {
+    "concept": "Digital",
+    "file_path": "digital.jpg",
+    "link": "https://en.wikipedia.org/wiki/Digital",
+    "year": "1940",
+    "place": "United Kingdom",
+    "description": "Representing data using discrete values, often binary code."
+  },
+  {
+    "concept": "Distributed Computing",
+    "file_path": "distributed-computing.jpg",
+    "link": "https://en.wikipedia.org/wiki/Distributed Computing",
+    "year": "1970",
+    "place": "United States",
+    "description": "A model where components of a software system are shared among multiple computers to improve performance and efficiency."
+  },
+  {
+    "concept": "Ecosystem",
+    "file_path": "ecosystem.jpg",
+    "link": "https://en.wikipedia.org/wiki/Ecosystem",
+    "year": "1935",
+    "place": "United Kingdom",
+    "description": "A complex network or interconnected system of entities, often used to describe a community of interacting organisms and their environment or a community of interrelated companies and technologies."
+  },
+  {
+    "concept": "Embedded Computing",
+    "file_path": "embedded-computing.jpg",
+    "link": "https://en.wikipedia.org/wiki/Embedded Computing",
+    "year": "1960",
+    "place": "United States",
+    "description": "The integration of computing systems into devices that are not typically considered computers, designed to perform specific tasks within larger systems."
+  },
+  {
+    "concept": "Encryption",
+    "file_path": "encryption.jpg",
+    "link": "https://en.wikipedia.org/wiki/Encryption",
+    "year": "-1900",
+    "place": "Egypt",
+    "description": "The process of converting data into a coded format to prevent unauthorized access."
+  },
+  {
+    "concept": "Hardware",
+    "file_path": "hardware.jpg",
+    "link": "https://en.wikipedia.org/wiki/Hardware",
+    "year": "1940",
+    "place": "United States and United Kingdom",
+    "description": "The physical components of a computer system."
+  },
+  {
+    "concept": "Information",
+    "file_path": "information.jpg",
+    "link": "https://en.wikipedia.org/wiki/Information",
+    "year": "1950",
+    "place": "United States",
+    "description": "Data that is processed and organized in a meaningful way."
+  },
+  {
+    "concept": "Input/output",
+    "file_path": "input-output.jpg",
+    "link": "https://en.wikipedia.org/wiki/Input/output",
+    "year": "1940",
+    "place": "United Kingdom",
+    "description": "The communication between an information processing system and the outside world, including devices such as keyboards, monitors, and printers."
+  },
+  {
+    "concept": "Integrated Circuit",
+    "file_path": "integrated-circuit.jpg",
+    "link": "https://en.wikipedia.org/wiki/Integrated Circuit",
+    "year": "1955",
+    "place": "United States",
+    "description": "A set of electronic circuits on a small chip of semiconductor material."
+  },
+  {
+    "concept": "Logic Gate",
+    "file_path": "logic-gate.jpg",
+    "link": "https://en.wikipedia.org/wiki/Logic Gate",
+    "year": "1950",
+    "place": "United Kingdom",
+    "description": "A basic building block of a digital circuit that performs a logical operation on one or more binary inputs."
+  },
+  {
+    "concept": "Machine Learning",
+    "file_path": "machine-learning.jpg",
+    "link": "https://en.wikipedia.org/wiki/Machine Learning",
+    "year": "1950",
+    "place": "United States",
+    "description": "A subset of AI where computers learn from data and improve their performance over time without being explicitly programmed."
+  },
+  {
+    "concept": "Mainframe",
+    "file_path": "mainframe.jpg",
+    "link": "https://en.wikipedia.org/wiki/Mainframe",
+    "year": "1950",
+    "place": "United States",
+    "description": "A large, powerful computer that handles the processing for many users simultaneously."
+  },
+  {
+    "concept": "Malware",
+    "file_path": "malware.jpg",
+    "link": "https://en.wikipedia.org/wiki/Malware",
+    "year": "1970",
+    "place": "United States",
+    "description": "Malicious software designed to harm, exploit, or otherwise compromise a computer system."
+  },
+  {
+    "concept": "Memory",
+    "file_path": "memory.jpg",
+    "link": "https://en.wikipedia.org/wiki/Memory",
+    "year": "1940",
+    "place": "United Kingdom",
+    "description": "The component of a computer that stores data and instructions for quick access by the CPU."
+  },
+  {
+    "concept": "Metcalf's Law",
+    "file_path": "metcalf-s-law.jpg",
+    "link": "https://en.wikipedia.org/wiki/Metcalf's Law",
+    "year": "1980",
+    "place": "United States",
+    "description": "The value of a network is proportional to the square of the number of connected users."
+  },
+  {
+    "concept": "Microcomputer",
+    "file_path": "microcomputer.jpg",
+    "link": "https://en.wikipedia.org/wiki/Microcomputer",
+    "year": "1970",
+    "place": "United States",
+    "description": "A small, relatively inexpensive computer with a microprocessor as its central processing unit."
+  },
+  {
+    "concept": "Minicomputer",
+    "file_path": "minicomputer.jpg",
+    "link": "https://en.wikipedia.org/wiki/Minicomputer",
+    "year": "1960",
+    "place": "United States",
+    "description": "A midsized computer that is more powerful than a microcomputer but less powerful than a mainframe."
+  },
+  {
+    "concept": "Moore's law",
+    "file_path": "moore-s-law.jpg",
+    "link": "https://en.wikipedia.org/wiki/Moore's law",
+    "year": "1965",
+    "place": "United States",
+    "description": "The observation that the number of transistors on a microchip doubles approximately every two years, increasing computational power."
+  },
+  {
+    "concept": "Moravec's Paradox",
+    "file_path": "moravec-s-paradox.jpg",
+    "link": "https://en.wikipedia.org/wiki/Moravec's Paradox",
+    "year": "1980",
+    "place": "United States",
+    "description": "The observation that tasks requiring high-level reasoning are easier for computers, while tasks requiring sensorimotor skills are harder."
+  },
+  {
+    "concept": "Network",
+    "file_path": "network.jpg",
+    "link": "https://en.wikipedia.org/wiki/Network",
+    "year": "1940",
+    "place": "United States",
+    "description": "A group of interconnected computers that can share data and resources."
+  },
+  {
+    "concept": "Neural Network",
+    "file_path": "neural-network.jpg",
+    "link": "https://en.wikipedia.org/wiki/Neural Network",
+    "year": "1940",
+    "place": "United States",
+    "description": "A computational model inspired by the human brain's network of neurons, used in machine learning and AI."
+  },
+  {
+    "concept": "Open Source",
+    "file_path": "open-source.jpg",
+    "link": "https://en.wikipedia.org/wiki/Open Source",
+    "year": "1990",
+    "place": "United States",
+    "description": "Software with source code that anyone can inspect, modify, and enhance."
+  },
+  {
+    "concept": "Operating System",
+    "file_path": "operating-system.jpg",
+    "link": "https://en.wikipedia.org/wiki/Operating System",
+    "year": "1950",
+    "place": "United States",
+    "description": "The software that manages a computer's hardware and software resources and provides common services for computer programs."
+  },
+  {
+    "concept": "Pattern",
+    "file_path": "pattern.jpg",
+    "link": "https://en.wikipedia.org/wiki/Pattern",
+    "year": "1980",
+    "place": "United States",
+    "description": "A repeated or regular arrangement of elements or data."
+  },
+  {
+    "concept": "Personal Computer",
+    "file_path": "personal-computer.jpg",
+    "link": "https://en.wikipedia.org/wiki/Personal Computer",
+    "year": "1975",
+    "place": "United States",
+    "description": "A computer designed for use by one person at a time."
+  },
+  {
+    "concept": "Program",
+    "file_path": "program.jpg",
+    "link": "https://en.wikipedia.org/wiki/Program",
+    "year": "1940",
+    "place": "United Kingdom",
+    "description": "A set of instructions that a computer follows to perform a task."
+  },
+  {
+    "concept": "Programming Language",
+    "file_path": "programming-language.jpg",
+    "link": "https://en.wikipedia.org/wiki/Programming Language",
+    "year": "1950",
+    "place": "United States",
+    "description": "A formal language used to write instructions that a computer can execute."
+  },
+  {
+    "concept": "Quantum Computer",
+    "file_path": "quantum-computer.jpg",
+    "link": "https://en.wikipedia.org/wiki/Quantum Computer",
+    "year": "1980",
+    "place": "United Kingdom",
+    "description": "An advanced computing paradigm that uses quantum bits (qubits) to process information exponentially faster than classical computers."
+  },
+  {
+    "concept": "Real-time Computing",
+    "file_path": "real-time-computing.jpg",
+    "link": "https://en.wikipedia.org/wiki/Real-time Computing",
+    "year": "1960",
+    "place": "United States",
+    "description": "Computing systems that respond to inputs or events within a guaranteed time frame."
+  },
+  {
+    "concept": "Semiconductor",
+    "file_path": "semiconductor.jpg",
+    "link": "https://en.wikipedia.org/wiki/Semiconductor",
+    "year": "1947",
+    "place": "United States",
+    "description": "A material with electrical conductivity between that of a conductor and an insulator, used in electronic devices."
+  },
+  {
+    "concept": "Service",
+    "file_path": "service.jpg",
+    "link": "https://en.wikipedia.org/wiki/Service",
+    "year": "1960",
+    "place": "United States",
+    "description": "A function or set of functions provided by a system to meet a specific need."
+  },
+  {
+    "concept": "Software",
+    "file_path": "software.jpg",
+    "link": "https://en.wikipedia.org/wiki/Software",
+    "year": "1955",
+    "place": "United States",
+    "description": "The programs and other operating information used by a computer."
+  },
+  {
+    "concept": "Software Architecture",
+    "file_path": "software-architecture.jpg",
+    "link": "https://en.wikipedia.org/wiki/Software Architecture",
+    "year": "1960",
+    "place": "United States",
+    "description": "The high-level structure of a software system, defining its components and their interactions."
+  },
+  {
+    "concept": "Software Engineering",
+    "file_path": "software-engineering.jpg",
+    "link": "https://en.wikipedia.org/wiki/Software Engineering",
+    "year": "1965",
+    "place": "United States",
+    "description": "The application of engineering principles to software development in a methodical way."
+  },
+  {
+    "concept": "Source Code",
+    "file_path": "source-code.jpg",
+    "link": "https://en.wikipedia.org/wiki/Source Code",
+    "year": "1950",
+    "place": "United States",
+    "description": "The human-readable instructions written by a programmer that define what a computer program does."
+  },
+  {
+    "concept": "State",
+    "file_path": "state.jpg",
+    "link": "https://en.wikipedia.org/wiki/State",
+    "year": "1940",
+    "place": "United Kingdom",
+    "description": "A specific condition or status of a system at a particular point in time."
+  },
+  {
+    "concept": "Supercomputer",
+    "file_path": "supercomputer.jpg",
+    "link": "https://en.wikipedia.org/wiki/Supercomputer",
+    "year": "1960",
+    "place": "United States",
+    "description": "An extremely powerful computer used for complex simulations and calculations."
+  },
+  {
+    "concept": "Turing Machine",
+    "file_path": "turing-machine.jpg",
+    "link": "https://en.wikipedia.org/wiki/Turing Machine",
+    "year": "1936",
+    "place": "United Kingdom",
+    "description": "An abstract computational model that can simulate any computer algorithm."
+  },
+  {
+    "concept": "Ubiquitious Computing",
+    "file_path": "ubiquitious-computing.jpg",
+    "link": "https://en.wikipedia.org/wiki/Ubiquitious Computing",
+    "year": "1985",
+    "place": "United States",
+    "description": "The concept of embedding computing capabilities into everyday objects to make them smart and interconnected."
+  },
+  {
+    "concept": "Virtual Reality",
+    "file_path": "virtual-reality.jpg",
+    "link": "https://en.wikipedia.org/wiki/Virtual Reality",
+    "year": "1980",
+    "place": "United States",
+    "description": "A simulated experience that can be similar to or completely different from the real world."
+  },
+  {
+    "concept": "Von Neumann Architecture",
+    "file_path": "von-neumann-architecture.jpg",
+    "link": "https://en.wikipedia.org/wiki/Von Neumann Architecture",
+    "year": "1940",
+    "place": "United States",
+    "description": "A computer architecture model that describes a system where the computer's memory holds both instructions and data."
+  }
+]

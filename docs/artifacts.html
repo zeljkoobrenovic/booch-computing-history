@@ -121,7 +121,10 @@
         <button id="tab_people" onclick="openFile('people')">People (2<sup>9</sup>)</button>
         <button id="tab_artifacts" onclick="openFile('artifacts')">Artifacts (2<sup>8</sup>)</button>
         <button id="tab_orgs" onclick="openFile('orgs')">Organizations (2<sup>7</sup>)</button>
-        <button id="tab_all" onclick="openFile('all')">Everything (2<sup>9</sup>+2<sup>8</sup>+2<sup>7</sup>)</button>
+        <button id="tab_concepts" onclick="openFile('concepts')">Concepts (2<sup>6</sup>)</button>
+        <button id="tab_all" onclick="openFile('all')">Everything
+            (2<sup>9</sup>+2<sup>8</sup>+2<sup>7</sup>+2<sup>6</sup>)
+        </button>
         <button onclick="openFile('places')">Countries (46<sup>1</sup>)</button>
     </div>
 
@@ -132,6 +135,7 @@
         if (page === 'people.html') document.getElementById('tab_people').style.backgroundColor = '#ccc';
         if (page === 'artifacts.html') document.getElementById('tab_artifacts').style.backgroundColor = '#ccc';
         if (page === 'orgs.html') document.getElementById('tab_orgs').style.backgroundColor = '#ccc';
+        if (page === 'concepts.html') document.getElementById('tab_concepts').style.backgroundColor = '#ccc';
         if (page === 'all.html') document.getElementById('tab_all').style.backgroundColor = '#ccc';
     </script>
 
@@ -160,7 +164,7 @@
         <div id="content"></div>
     </div>
     <div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
-        generated on 2024-06-12 based on this source
+        generated on 2024-06-13 based on this source
         <a target="_blank" style="color: #a0a0a0;"
            href="https://docs.google.com/spreadsheets/d/1DTQJSygQGP3m74sWdRSt7Tv13NGOAWJBBriZu8Aoe-4/edit?usp=sharing">
             data sheet</a>
@@ -229,6 +233,7 @@
         else if (place.includes('Russia')) code = 'ru';
         else if (place.includes('England')) code = 'gb';
         else if (place.includes('Scotland')) code = 'gb';
+        else if (place.includes('United Kingdom')) code = 'gb';
         else if (place.includes('Greece')) code = 'gr';
         else if (place.includes('Iraq')) code = 'ir';
         else if (place.includes('Abbasid')) code = 'ir';
@@ -266,6 +271,7 @@
         else if (place.includes('Greenland')) code = 'gl';
         else if (place.includes('Thailand')) code = 'th';
         else if (place.includes('Bermuda')) code = 'bm';
+        else if (place.includes('Egypt')) code = 'eg';
 
         return 'https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/' + code + '.svg';
     }

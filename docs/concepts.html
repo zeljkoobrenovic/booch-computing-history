@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grady Booch's History of Computing Timeline</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 107%;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .book {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .year {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-left: 10px;
+            vertical-align: top;
+            color: crimson;
+        }
+
+        .cover {
+            width: 100px;
+            height: 133px;
+            object-fit: cover;
+            display: inline-block;
+            border: 1px solid #d0d0d0;
+        }
+
+        .big-cover {
+            width: 220px;
+            height: 300px;
+            object-fit: cover;
+            display: inline-block;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            border-radius: 9px;
+        }
+
+        .title {
+            font-size: 90%;
+            width: 220px;
+            text-align: center;
+            margin-top: 2px;
+            vertical-align: top;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    function openFile(id) {
+        window.location = id + '.html';
+    }
+
+</script>
+<div style="margin-left: 23px; margin-bottom: 20px;">
+    <div style="margin-left: 3px; margin-top: 40px">
+        <div style="margin-bottom: 10px; margin-left: 6px">
+            <img src="logo.png" style="vertical-align: middle; height: 120px">
+            <div style="display: inline-block; vertical-align: middle; padding-left: 12px">
+                <b style="padding-top: 20px; font-size: 380%;">Booch's History of Computing</b>
+                <p style="font-size: 110%">Based on <a href="https://twitter.com/Grady_Booch" target="_blank"
+                                                       style="color: #a0a0a0;">Grady Booch's</a>
+                    <a target="_blank"
+                       style="color: #a0a0a0;"
+                       href="https://computingthehumanexperience.com/"> history of computing</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab">
+        <button id="tab_people" onclick="openFile('people')">People (2<sup>9</sup>)</button>
+        <button id="tab_artifacts" onclick="openFile('artifacts')">Artifacts (2<sup>8</sup>)</button>
+        <button id="tab_orgs" onclick="openFile('orgs')">Organizations (2<sup>7</sup>)</button>
+        <button id="tab_concepts" onclick="openFile('concepts')">Concepts (2<sup>6</sup>)</button>
+        <button id="tab_all" onclick="openFile('all')">Everything
+            (2<sup>9</sup>+2<sup>8</sup>+2<sup>7</sup>+2<sup>6</sup>)
+        </button>
+        <button onclick="openFile('places')">Countries (46<sup>1</sup>)</button>
+    </div>
+
+    <script>
+        const path = window.location.pathname;
+        const page = path.split("/").pop();
+
+        if (page === 'people.html') document.getElementById('tab_people').style.backgroundColor = '#ccc';
+        if (page === 'artifacts.html') document.getElementById('tab_artifacts').style.backgroundColor = '#ccc';
+        if (page === 'orgs.html') document.getElementById('tab_orgs').style.backgroundColor = '#ccc';
+        if (page === 'concepts.html') document.getElementById('tab_concepts').style.backgroundColor = '#ccc';
+        if (page === 'all.html') document.getElementById('tab_all').style.backgroundColor = '#ccc';
+    </script>
+
+    <div class="tabcontent">
+        <div style="margin-left: 30px; margin-bottom: 30px; color: grey; padding-top: 30px">
+            <div>
+                <input id="filter" type="text" placeholder="search entries..."
+                       style="font-size: 110%; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">
+                <div id="summary" style="display: inline-block"></div>
+            </div>
+            <label onclick="update()">
+                <input type="checkbox" id="group-by-year" checked style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">group by year</div>
+            </label>
+            &nbsp;&nbsp;&nbsp;
+            <label onclick="update()">
+                <input type="checkbox" id="show-details" checked style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">show title</div>
+            </label>
+            &nbsp;&nbsp;&nbsp;
+            <label onclick="update()">
+                <input type="checkbox" id="overview" style="width: 18px; height: 18px">
+                <div style="display: inline-block; vertical-align: top; margin-top: 2px">show as a visual overview</div>
+            </label>
+        </div>
+        <div id="content"></div>
+    </div>
+    <div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+        generated on 2024-06-13 based on this source
+        <a target="_blank" style="color: #a0a0a0;"
+           href="https://docs.google.com/spreadsheets/d/1DTQJSygQGP3m74sWdRSt7Tv13NGOAWJBBriZu8Aoe-4/edit?usp=sharing">
+            data sheet</a>
+    </div>
+</div>
+
+<script>
+    function flagImageOf(place) {
+        let code = 'un';
+
+        if (place.includes('United States')) code = 'us';
+        else if (place.includes('California')) code = 'us';
+        else if (place.includes('New York')) code = 'us';
+        else if (place.includes('Tennessee')) code = 'us';
+        else if (place.includes('Maine')) code = 'us';
+        else if (place.includes('Illinois')) code = 'us';
+        else if (place.includes('Florida')) code = 'us';
+        else if (place.includes('Seattle')) code = 'us';
+        else if (place.includes('Michigan')) code = 'us';
+        else if (place.includes('Washington')) code = 'us';
+        else if (place.includes('North Carolina')) code = 'us';
+        else if (place.includes('Texas')) code = 'us';
+        else if (place.includes('New Hampshire')) code = 'us';
+        else if (place.includes('Colorado')) code = 'us';
+        else if (place.includes('Georgia')) code = 'us';
+        else if (place.includes('Delaware')) code = 'us';
+        else if (place.includes('Utah')) code = 'us';
+        else if (place.includes('Alabama')) code = 'us';
+        else if (place.includes('New Mexico')) code = 'us';
+        else if (place.includes('Massachusetts')) code = 'us';
+        else if (place.includes('Pennsylvania')) code = 'us';
+        else if (place.includes('New Jersey')) code = 'us';
+        else if (place.includes('Cambridge')) code = 'us';
+        else if (place.includes('Virginia')) code = 'us';
+        else if (place.includes('Missouri')) code = 'us';
+        else if (place.includes('Oregon')) code = 'us';
+        else if (place.includes('Mississippi')) code = 'us';
+        else if (place.includes('Arizona')) code = 'us';
+        else if (place.includes('Wisconsin')) code = 'us';
+        else if (place.includes('Minnesota')) code = 'us';
+        else if (place.includes('Connecticut')) code = 'us';
+        else if (place.includes('South Dakota')) code = 'us';
+        else if (place.includes('Louisiana')) code = 'us';
+        else if (place.includes('Nebraska')) code = 'us';
+        else if (place.includes('14610')) code = 'us';
+        else if (place.includes('Kentucky')) code = 'us';
+        else if (place.includes('Maryland')) code = 'us';
+        else if (place.includes('Rhode Island')) code = 'us';
+        else if (place.includes('Iowa')) code = 'us';
+        else if (place.includes('Ohio')) code = 'us';
+        else if (place.includes('Kansas')) code = 'us';
+        else if (place.includes('Hawaii')) code = 'us';
+        else if (place.includes('Israel')) code = 'il';
+        else if (place.includes('Italy')) code = 'it';
+        else if (place.includes('France')) code = 'fr';
+        else if (place.includes('Canada')) code = 'ca';
+        else if (place.includes('Japan')) code = 'jp';
+        else if (place.includes('Netherlands')) code = 'nl';
+        else if (place.includes('Holland')) code = 'nl';
+        else if (place.includes('China')) code = 'cn';
+        else if (place.includes('Indiana')) code = 'us';
+        else if (place.includes('India')) code = 'in';
+        else if (place.includes('Finland')) code = 'fi';
+        else if (place.includes('Switzerland')) code = 'ch';
+        else if (place.includes('Ireland')) code = 'ir';
+        else if (place.includes('Russia')) code = 'ru';
+        else if (place.includes('England')) code = 'gb';
+        else if (place.includes('Scotland')) code = 'gb';
+        else if (place.includes('United Kingdom')) code = 'gb';
+        else if (place.includes('Greece')) code = 'gr';
+        else if (place.includes('Iraq')) code = 'ir';
+        else if (place.includes('Abbasid')) code = 'ir';
+        else if (place.includes('Turkey')) code = 'tr';
+        else if (place.includes('Germany')) code = 'de';
+        else if (place.includes('Majorca')) code = 'es';
+        else if (place.includes('Spain')) code = 'es';
+        else if (place.includes('Uzbekistan')) code = 'uz';
+        else if (place.includes('Europe')) code = 'eu';
+        else if (place.includes('Ukraine')) code = 'ua';
+        else if (place.includes('Taiwan')) code = 'tw';
+        else if (place.includes('Poland')) code = 'pl';
+        else if (place.includes('Mexico')) code = 'mx';
+        else if (place.includes('Romania')) code = 'ro';
+        else if (place.includes('Hungary')) code = 'hu';
+        else if (place.includes('Czech')) code = 'cz';
+        else if (place.includes('Austria')) code = 'at';
+        else if (place.includes('Azerbaijan')) code = 'az';
+        else if (place.includes('Norway')) code = 'no';
+        else if (place.includes('Denmark')) code = 'dk';
+        else if (place.includes('Latvia')) code = 'lv';
+        else if (place.includes('South Africa')) code = 'za';
+        else if (place.includes('Palestine')) code = 'ps';
+        else if (place.includes('Venezuela')) code = 've';
+        else if (place.includes('Venezula')) code = 've';
+        else if (place.includes('Vietnam')) code = 've';
+        else if (place.includes('South Korea')) code = 'vn';
+        else if (place.includes('New Zealand')) code = 'nz';
+        else if (place.includes('Singapore')) code = 'sg';
+        else if (place.includes('Portugal')) code = 'pt';
+        else if (place.includes('Australia')) code = 'au';
+        else if (place.includes('Sri Lanka')) code = 'lk';
+        else if (place.includes('Belgium')) code = 'be';
+        else if (place.includes('Sweden')) code = 'se';
+        else if (place.includes('Greenland')) code = 'gl';
+        else if (place.includes('Thailand')) code = 'th';
+        else if (place.includes('Bermuda')) code = 'bm';
+        else if (place.includes('Egypt')) code = 'eg';
+
+        return 'https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/' + code + '.svg';
+    }
+
+    function placeOf(item) {
+        const places = [];
+        const placesMap = {};
+
+        const add = (place) => {
+            if (place && place.toLowerCase() !== 'unknown' && place.toLowerCase() !== 'unnown' && placesMap[place] !== null) {
+                places.push(place);
+                placesMap[place] = true;
+            }
+        }
+
+        add(item.summary.Birthplace);
+        add(item.summary.Place);
+        add(item.summary.Nationality);
+        add(item.summary['Place of death']);
+
+        return places;
+    }
+</script>
+
+<script>
+    const books = [{"title": "Abstraction", "type": "Concepts", "imagePath": "abstraction.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nSimplifying complex systems by focusing on high-level concepts and hiding lower-level details.", "Place": "United States", "Description": "Simplifying complex systems by focusing on high-level concepts and hiding lower-level details."}, "links": [{"path": "https://en.wikipedia.org/wiki/Abstraction_(computer_science)"}]}, {"title": "Algorithm", "type": "Concepts", "imagePath": "algorithm.jpg", "year": "825", "summary": {"Summary": "Place: Persia\n\nA step-by-step procedure or set of rules for solving a problem or performing a task.", "Place": "Persia", "Description": "A step-by-step procedure or set of rules for solving a problem or performing a task."}, "links": [{"path": "https://en.wikipedia.org/wiki/Algorithm"}]}, {"title": "Analog", "type": "Concepts", "imagePath": "analog.jpg", "year": "1830", "summary": {"Summary": "Place: United Kingdom\n\nContinuously varying signals that represent physical quantities.", "Place": "United Kingdom", "Description": "Continuously varying signals that represent physical quantities."}, "links": [{"path": "https://en.wikipedia.org/wiki/Analog_signal"}]}, {"title": "Artificial Intelligence", "type": "Concepts", "imagePath": "artificial-intelligence.jpg", "year": "1950", "summary": {"Summary": "Place: United Kingdom\n\nThe simulation of human intelligence in machines that are programmed to think and learn.", "Place": "United Kingdom", "Description": "The simulation of human intelligence in machines that are programmed to think and learn."}, "links": [{"path": "https://en.wikipedia.org/wiki/Artificial Intelligence"}]}, {"title": "Augmented Reality", "type": "Concepts", "imagePath": "augmented-reality.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nAn interactive experience where digital information is overlaid onto the real world.", "Place": "United States", "Description": "An interactive experience where digital information is overlaid onto the real world."}, "links": [{"path": "https://en.wikipedia.org/wiki/Augmented Reality"}]}, {"title": "Bekenstein Bound", "type": "Concepts", "imagePath": "bekenstein-bound.jpg", "year": "1981", "summary": {"Summary": "Place: Mexico\n\nA limit on the amount of information that can be contained within a given finite region of space.", "Place": "Mexico", "Description": "A limit on the amount of information that can be contained within a given finite region of space."}, "links": [{"path": "https://en.wikipedia.org/wiki/Bekenstein Bound"}]}, {"title": "Binary Number", "type": "Concepts", "imagePath": "binary-number.jpg", "year": "1670", "summary": {"Summary": "Place: Germany\n\nA number expressed in the base-2 numeral system, using only 0 and 1.", "Place": "Germany", "Description": "A number expressed in the base-2 numeral system, using only 0 and 1."}, "links": [{"path": "https://en.wikipedia.org/wiki/Binary_number"}]}, {"title": "Boolean Algebra", "type": "Concepts", "imagePath": "boolean-algebra.jpg", "year": "1854", "summary": {"Summary": "Place: United Kingdom\n\nA branch of algebra involving variables with two possible values, true or false, and operations like AND, OR, and NOT.", "Place": "United Kingdom", "Description": "A branch of algebra involving variables with two possible values, true or false, and operations like AND, OR, and NOT."}, "links": [{"path": "https://en.wikipedia.org/wiki/Boolean Algebra"}]}, {"title": "Bug", "type": "Concepts", "imagePath": "bug.jpg", "year": "1947", "summary": {"Summary": "Place: United States\n\nAn error or flaw in software or hardware that causes it to produce incorrect or unexpected results.", "Place": "United States", "Description": "An error or flaw in software or hardware that causes it to produce incorrect or unexpected results."}, "links": [{"path": "https://en.wikipedia.org/wiki/Bug"}]}, {"title": "Central Processing Unit", "type": "Concepts", "imagePath": "central-processing-unit.jpg", "year": "1955", "summary": {"Summary": "Place: United States\n\nThe primary component of a computer that performs most of the processing inside a computer.", "Place": "United States", "Description": "The primary component of a computer that performs most of the processing inside a computer."}, "links": [{"path": "https://en.wikipedia.org/wiki/Central Processing Unit"}]}, {"title": "Cloud Computing", "type": "Concepts", "imagePath": "cloud-computing.jpg", "year": "2006", "summary": {"Summary": "Place: United States\n\nThe delivery of computing services over the internet, including storage, processing, and software, on a pay-as-you-go basis.", "Place": "United States", "Description": "The delivery of computing services over the internet, including storage, processing, and software, on a pay-as-you-go basis."}, "links": [{"path": "https://en.wikipedia.org/wiki/Cloud Computing"}]}, {"title": "Complexity", "type": "Concepts", "imagePath": "complexity.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nThe degree to which a system or problem is complicated and difficult to understand or solve.", "Place": "United States", "Description": "The degree to which a system or problem is complicated and difficult to understand or solve."}, "links": [{"path": "https://en.wikipedia.org/wiki/Complexity"}]}, {"title": "Compression", "type": "Concepts", "imagePath": "compression.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nReducing the size of data for storage or transmission efficiency.", "Place": "United States", "Description": "Reducing the size of data for storage or transmission efficiency."}, "links": [{"path": "https://en.wikipedia.org/wiki/Compression"}]}, {"title": "Computability", "type": "Concepts", "imagePath": "computability.jpg", "year": "1936", "summary": {"Summary": "Place: United Kingdom\n\nThe ability of a problem to be solved by a computer algorithm.", "Place": "United Kingdom", "Description": "The ability of a problem to be solved by a computer algorithm."}, "links": [{"path": "https://en.wikipedia.org/wiki/Computability"}]}, {"title": "Computational Thinking", "type": "Concepts", "imagePath": "computational-thinking.jpg", "year": "2006", "summary": {"Summary": "Place: United States\n\nProblem-solving that involves formulating problems and solutions in a way that a computer can execute.", "Place": "United States", "Description": "Problem-solving that involves formulating problems and solutions in a way that a computer can execute."}, "links": [{"path": "https://en.wikipedia.org/wiki/Computational Thinking"}]}, {"title": "Computer", "type": "Concepts", "imagePath": "computer.jpg", "year": "1940", "summary": {"Summary": "Place: United Kingdom\n\nAn electronic device that processes data according to instructions stored in its memory.", "Place": "United Kingdom", "Description": "An electronic device that processes data according to instructions stored in its memory."}, "links": [{"path": "https://en.wikipedia.org/wiki/Computer"}]}, {"title": "Computer Architecture", "type": "Concepts", "imagePath": "computer-architecture.jpg", "year": "1940", "summary": {"Summary": "Place: United Kingdom\n\nThe design and organization of a computer's core components, including the CPU, memory, and input/output systems.", "Place": "United Kingdom", "Description": "The design and organization of a computer's core components, including the CPU, memory, and input/output systems."}, "links": [{"path": "https://en.wikipedia.org/wiki/Computer Architecture"}]}, {"title": "Computing", "type": "Concepts", "imagePath": "computing.jpg", "year": "1940", "summary": {"Summary": "Place: United Kingdom\n\nThe use of computers to process information or perform tasks.", "Place": "United Kingdom", "Description": "The use of computers to process information or perform tasks."}, "links": [{"path": "https://en.wikipedia.org/wiki/Computing"}]}, {"title": "Concurrency", "type": "Concepts", "imagePath": "concurrency.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nThe execution of multiple sequences of operations simultaneously within a computing system.", "Place": "United States", "Description": "The execution of multiple sequences of operations simultaneously within a computing system."}, "links": [{"path": "https://en.wikipedia.org/wiki/Concurrency"}]}, {"title": "Data Structure", "type": "Concepts", "imagePath": "data-structure.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nA specific way of organizing and storing data in a computer so that it can be accessed and modified efficiently.", "Place": "United States", "Description": "A specific way of organizing and storing data in a computer so that it can be accessed and modified efficiently."}, "links": [{"path": "https://en.wikipedia.org/wiki/Data Structure"}]}, {"title": "Database", "type": "Concepts", "imagePath": "database.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nAn organized collection of data that can be easily accessed, managed, and updated.", "Place": "United States", "Description": "An organized collection of data that can be easily accessed, managed, and updated."}, "links": [{"path": "https://en.wikipedia.org/wiki/Database"}]}, {"title": "Decomposition", "type": "Concepts", "imagePath": "decomposition.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nBreaking down a complex problem into smaller, more manageable parts.", "Place": "United States", "Description": "Breaking down a complex problem into smaller, more manageable parts."}, "links": [{"path": "https://en.wikipedia.org/wiki/Decomposition"}]}, {"title": "Deterministic System", "type": "Concepts", "imagePath": "deterministic-system.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nA system in which no randomness is involved in the development of future states.", "Place": "United States", "Description": "A system in which no randomness is involved in the development of future states."}, "links": [{"path": "https://en.wikipedia.org/wiki/Deterministic System"}]}, {"title": "Digital", "type": "Concepts", "imagePath": "digital.jpg", "year": "1940", "summary": {"Summary": "Place: United Kingdom\n\nRepresenting data using discrete values, often binary code.", "Place": "United Kingdom", "Description": "Representing data using discrete values, often binary code."}, "links": [{"path": "https://en.wikipedia.org/wiki/Digital"}]}, {"title": "Distributed Computing", "type": "Concepts", "imagePath": "distributed-computing.jpg", "year": "1970", "summary": {"Summary": "Place: United States\n\nA model where components of a software system are shared among multiple computers to improve performance and efficiency.", "Place": "United States", "Description": "A model where components of a software system are shared among multiple computers to improve performance and efficiency."}, "links": [{"path": "https://en.wikipedia.org/wiki/Distributed Computing"}]}, {"title": "Ecosystem", "type": "Concepts", "imagePath": "ecosystem.jpg", "year": "1935", "summary": {"Summary": "Place: United Kingdom\n\nA complex network or interconnected system of entities, often used to describe a community of interacting organisms and their environment or a community of interrelated companies and technologies.", "Place": "United Kingdom", "Description": "A complex network or interconnected system of entities, often used to describe a community of interacting organisms and their environment or a community of interrelated companies and technologies."}, "links": [{"path": "https://en.wikipedia.org/wiki/Ecosystem"}]}, {"title": "Embedded Computing", "type": "Concepts", "imagePath": "embedded-computing.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nThe integration of computing systems into devices that are not typically considered computers, designed to perform specific tasks within larger systems.", "Place": "United States", "Description": "The integration of computing systems into devices that are not typically considered computers, designed to perform specific tasks within larger systems."}, "links": [{"path": "https://en.wikipedia.org/wiki/Embedded Computing"}]}, {"title": "Encryption", "type": "Concepts", "imagePath": "encryption.jpg", "year": "-1900", "summary": {"Summary": "Place: Egypt\n\nThe process of converting data into a coded format to prevent unauthorized access.", "Place": "Egypt", "Description": "The process of converting data into a coded format to prevent unauthorized access."}, "links": [{"path": "https://en.wikipedia.org/wiki/Encryption"}]}, {"title": "Hardware", "type": "Concepts", "imagePath": "hardware.jpg", "year": "1940", "summary": {"Summary": "Place: United States and United Kingdom\n\nThe physical components of a computer system.", "Place": "United States and United Kingdom", "Description": "The physical components of a computer system."}, "links": [{"path": "https://en.wikipedia.org/wiki/Hardware"}]}, {"title": "Information", "type": "Concepts", "imagePath": "information.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nData that is processed and organized in a meaningful way.", "Place": "United States", "Description": "Data that is processed and organized in a meaningful way."}, "links": [{"path": "https://en.wikipedia.org/wiki/Information"}]}, {"title": "Input/output", "type": "Concepts", "imagePath": "input-output.jpg", "year": "1940", "summary": {"Summary": "Place: United Kingdom\n\nThe communication between an information processing system and the outside world, including devices such as keyboards, monitors, and printers.", "Place": "United Kingdom", "Description": "The communication between an information processing system and the outside world, including devices such as keyboards, monitors, and printers."}, "links": [{"path": "https://en.wikipedia.org/wiki/Input/output"}]}, {"title": "Integrated Circuit", "type": "Concepts", "imagePath": "integrated-circuit.jpg", "year": "1955", "summary": {"Summary": "Place: United States\n\nA set of electronic circuits on a small chip of semiconductor material.", "Place": "United States", "Description": "A set of electronic circuits on a small chip of semiconductor material."}, "links": [{"path": "https://en.wikipedia.org/wiki/Integrated Circuit"}]}, {"title": "Logic Gate", "type": "Concepts", "imagePath": "logic-gate.jpg", "year": "1950", "summary": {"Summary": "Place: United Kingdom\n\nA basic building block of a digital circuit that performs a logical operation on one or more binary inputs.", "Place": "United Kingdom", "Description": "A basic building block of a digital circuit that performs a logical operation on one or more binary inputs."}, "links": [{"path": "https://en.wikipedia.org/wiki/Logic Gate"}]}, {"title": "Machine Learning", "type": "Concepts", "imagePath": "machine-learning.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nA subset of AI where computers learn from data and improve their performance over time without being explicitly programmed.", "Place": "United States", "Description": "A subset of AI where computers learn from data and improve their performance over time without being explicitly programmed."}, "links": [{"path": "https://en.wikipedia.org/wiki/Machine Learning"}]}, {"title": "Mainframe", "type": "Concepts", "imagePath": "mainframe.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nA large, powerful computer that handles the processing for many users simultaneously.", "Place": "United States", "Description": "A large, powerful computer that handles the processing for many users simultaneously."}, "links": [{"path": "https://en.wikipedia.org/wiki/Mainframe"}]}, {"title": "Malware", "type": "Concepts", "imagePath": "malware.jpg", "year": "1970", "summary": {"Summary": "Place: United States\n\nMalicious software designed to harm, exploit, or otherwise compromise a computer system.", "Place": "United States", "Description": "Malicious software designed to harm, exploit, or otherwise compromise a computer system."}, "links": [{"path": "https://en.wikipedia.org/wiki/Malware"}]}, {"title": "Memory", "type": "Concepts", "imagePath": "memory.jpg", "year": "1940", "summary": {"Summary": "Place: United Kingdom\n\nThe component of a computer that stores data and instructions for quick access by the CPU.", "Place": "United Kingdom", "Description": "The component of a computer that stores data and instructions for quick access by the CPU."}, "links": [{"path": "https://en.wikipedia.org/wiki/Memory"}]}, {"title": "Metcalf's Law", "type": "Concepts", "imagePath": "metcalf-s-law.jpg", "year": "1980", "summary": {"Summary": "Place: United States\n\nThe value of a network is proportional to the square of the number of connected users.", "Place": "United States", "Description": "The value of a network is proportional to the square of the number of connected users."}, "links": [{"path": "https://en.wikipedia.org/wiki/Metcalf's Law"}]}, {"title": "Microcomputer", "type": "Concepts", "imagePath": "microcomputer.jpg", "year": "1970", "summary": {"Summary": "Place: United States\n\nA small, relatively inexpensive computer with a microprocessor as its central processing unit.", "Place": "United States", "Description": "A small, relatively inexpensive computer with a microprocessor as its central processing unit."}, "links": [{"path": "https://en.wikipedia.org/wiki/Microcomputer"}]}, {"title": "Minicomputer", "type": "Concepts", "imagePath": "minicomputer.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nA midsized computer that is more powerful than a microcomputer but less powerful than a mainframe.", "Place": "United States", "Description": "A midsized computer that is more powerful than a microcomputer but less powerful than a mainframe."}, "links": [{"path": "https://en.wikipedia.org/wiki/Minicomputer"}]}, {"title": "Moore's law", "type": "Concepts", "imagePath": "moore-s-law.jpg", "year": "1965", "summary": {"Summary": "Place: United States\n\nThe observation that the number of transistors on a microchip doubles approximately every two years, increasing computational power.", "Place": "United States", "Description": "The observation that the number of transistors on a microchip doubles approximately every two years, increasing computational power."}, "links": [{"path": "https://en.wikipedia.org/wiki/Moore's law"}]}, {"title": "Moravec's Paradox", "type": "Concepts", "imagePath": "moravec-s-paradox.jpg", "year": "1980", "summary": {"Summary": "Place: United States\n\nThe observation that tasks requiring high-level reasoning are easier for computers, while tasks requiring sensorimotor skills are harder.", "Place": "United States", "Description": "The observation that tasks requiring high-level reasoning are easier for computers, while tasks requiring sensorimotor skills are harder."}, "links": [{"path": "https://en.wikipedia.org/wiki/Moravec's Paradox"}]}, {"title": "Network", "type": "Concepts", "imagePath": "network.jpg", "year": "1940", "summary": {"Summary": "Place: United States\n\nA group of interconnected computers that can share data and resources.", "Place": "United States", "Description": "A group of interconnected computers that can share data and resources."}, "links": [{"path": "https://en.wikipedia.org/wiki/Network"}]}, {"title": "Neural Network", "type": "Concepts", "imagePath": "neural-network.jpg", "year": "1940", "summary": {"Summary": "Place: United States\n\nA computational model inspired by the human brain's network of neurons, used in machine learning and AI.", "Place": "United States", "Description": "A computational model inspired by the human brain's network of neurons, used in machine learning and AI."}, "links": [{"path": "https://en.wikipedia.org/wiki/Neural Network"}]}, {"title": "Open Source", "type": "Concepts", "imagePath": "open-source.jpg", "year": "1990", "summary": {"Summary": "Place: United States\n\nSoftware with source code that anyone can inspect, modify, and enhance.", "Place": "United States", "Description": "Software with source code that anyone can inspect, modify, and enhance."}, "links": [{"path": "https://en.wikipedia.org/wiki/Open Source"}]}, {"title": "Operating System", "type": "Concepts", "imagePath": "operating-system.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nThe software that manages a computer's hardware and software resources and provides common services for computer programs.", "Place": "United States", "Description": "The software that manages a computer's hardware and software resources and provides common services for computer programs."}, "links": [{"path": "https://en.wikipedia.org/wiki/Operating System"}]}, {"title": "Pattern", "type": "Concepts", "imagePath": "pattern.jpg", "year": "1980", "summary": {"Summary": "Place: United States\n\nA repeated or regular arrangement of elements or data.", "Place": "United States", "Description": "A repeated or regular arrangement of elements or data."}, "links": [{"path": "https://en.wikipedia.org/wiki/Pattern"}]}, {"title": "Personal Computer", "type": "Concepts", "imagePath": "personal-computer.jpg", "year": "1975", "summary": {"Summary": "Place: United States\n\nA computer designed for use by one person at a time.", "Place": "United States", "Description": "A computer designed for use by one person at a time."}, "links": [{"path": "https://en.wikipedia.org/wiki/Personal Computer"}]}, {"title": "Program", "type": "Concepts", "imagePath": "program.jpg", "year": "1940", "summary": {"Summary": "Place: United Kingdom\n\nA set of instructions that a computer follows to perform a task.", "Place": "United Kingdom", "Description": "A set of instructions that a computer follows to perform a task."}, "links": [{"path": "https://en.wikipedia.org/wiki/Program"}]}, {"title": "Programming Language", "type": "Concepts", "imagePath": "programming-language.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nA formal language used to write instructions that a computer can execute.", "Place": "United States", "Description": "A formal language used to write instructions that a computer can execute."}, "links": [{"path": "https://en.wikipedia.org/wiki/Programming Language"}]}, {"title": "Quantum Computer", "type": "Concepts", "imagePath": "quantum-computer.jpg", "year": "1980", "summary": {"Summary": "Place: United Kingdom\n\nAn advanced computing paradigm that uses quantum bits (qubits) to process information exponentially faster than classical computers.", "Place": "United Kingdom", "Description": "An advanced computing paradigm that uses quantum bits (qubits) to process information exponentially faster than classical computers."}, "links": [{"path": "https://en.wikipedia.org/wiki/Quantum Computer"}]}, {"title": "Real-time Computing", "type": "Concepts", "imagePath": "real-time-computing.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nComputing systems that respond to inputs or events within a guaranteed time frame.", "Place": "United States", "Description": "Computing systems that respond to inputs or events within a guaranteed time frame."}, "links": [{"path": "https://en.wikipedia.org/wiki/Real-time Computing"}]}, {"title": "Semiconductor", "type": "Concepts", "imagePath": "semiconductor.jpg", "year": "1947", "summary": {"Summary": "Place: United States\n\nA material with electrical conductivity between that of a conductor and an insulator, used in electronic devices.", "Place": "United States", "Description": "A material with electrical conductivity between that of a conductor and an insulator, used in electronic devices."}, "links": [{"path": "https://en.wikipedia.org/wiki/Semiconductor"}]}, {"title": "Service", "type": "Concepts", "imagePath": "service.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nA function or set of functions provided by a system to meet a specific need.", "Place": "United States", "Description": "A function or set of functions provided by a system to meet a specific need."}, "links": [{"path": "https://en.wikipedia.org/wiki/Service"}]}, {"title": "Software", "type": "Concepts", "imagePath": "software.jpg", "year": "1955", "summary": {"Summary": "Place: United States\n\nThe programs and other operating information used by a computer.", "Place": "United States", "Description": "The programs and other operating information used by a computer."}, "links": [{"path": "https://en.wikipedia.org/wiki/Software"}]}, {"title": "Software Architecture", "type": "Concepts", "imagePath": "software-architecture.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nThe high-level structure of a software system, defining its components and their interactions.", "Place": "United States", "Description": "The high-level structure of a software system, defining its components and their interactions."}, "links": [{"path": "https://en.wikipedia.org/wiki/Software Architecture"}]}, {"title": "Software Engineering", "type": "Concepts", "imagePath": "software-engineering.jpg", "year": "1965", "summary": {"Summary": "Place: United States\n\nThe application of engineering principles to software development in a methodical way.", "Place": "United States", "Description": "The application of engineering principles to software development in a methodical way."}, "links": [{"path": "https://en.wikipedia.org/wiki/Software Engineering"}]}, {"title": "Source Code", "type": "Concepts", "imagePath": "source-code.jpg", "year": "1950", "summary": {"Summary": "Place: United States\n\nThe human-readable instructions written by a programmer that define what a computer program does.", "Place": "United States", "Description": "The human-readable instructions written by a programmer that define what a computer program does."}, "links": [{"path": "https://en.wikipedia.org/wiki/Source Code"}]}, {"title": "State", "type": "Concepts", "imagePath": "state.jpg", "year": "1940", "summary": {"Summary": "Place: United Kingdom\n\nA specific condition or status of a system at a particular point in time.", "Place": "United Kingdom", "Description": "A specific condition or status of a system at a particular point in time."}, "links": [{"path": "https://en.wikipedia.org/wiki/State"}]}, {"title": "Supercomputer", "type": "Concepts", "imagePath": "supercomputer.jpg", "year": "1960", "summary": {"Summary": "Place: United States\n\nAn extremely powerful computer used for complex simulations and calculations.", "Place": "United States", "Description": "An extremely powerful computer used for complex simulations and calculations."}, "links": [{"path": "https://en.wikipedia.org/wiki/Supercomputer"}]}, {"title": "Turing Machine", "type": "Concepts", "imagePath": "turing-machine.jpg", "year": "1936", "summary": {"Summary": "Place: United Kingdom\n\nAn abstract computational model that can simulate any computer algorithm.", "Place": "United Kingdom", "Description": "An abstract computational model that can simulate any computer algorithm."}, "links": [{"path": "https://en.wikipedia.org/wiki/Turing Machine"}]}, {"title": "Ubiquitious Computing", "type": "Concepts", "imagePath": "ubiquitious-computing.jpg", "year": "1985", "summary": {"Summary": "Place: United States\n\nThe concept of embedding computing capabilities into everyday objects to make them smart and interconnected.", "Place": "United States", "Description": "The concept of embedding computing capabilities into everyday objects to make them smart and interconnected."}, "links": [{"path": "https://en.wikipedia.org/wiki/Ubiquitious Computing"}]}, {"title": "Virtual Reality", "type": "Concepts", "imagePath": "virtual-reality.jpg", "year": "1980", "summary": {"Summary": "Place: United States\n\nA simulated experience that can be similar to or completely different from the real world.", "Place": "United States", "Description": "A simulated experience that can be similar to or completely different from the real world."}, "links": [{"path": "https://en.wikipedia.org/wiki/Virtual Reality"}]}, {"title": "Von Neumann Architecture", "type": "Concepts", "imagePath": "von-neumann-architecture.jpg", "year": "1940", "summary": {"Summary": "Place: United States\n\nA computer architecture model that describes a system where the computer's memory holds both instructions and data.", "Place": "United States", "Description": "A computer architecture model that describes a system where the computer's memory holds both instructions and data."}, "links": [{"path": "https://en.wikipedia.org/wiki/Von Neumann Architecture"}]}];
+
+    function update() {
+        let html = '<div style="margin: 20px;">';
+        const overview = document.getElementById('overview').checked;
+        const showDetails = document.getElementById('show-details').checked && !overview;
+        const filter = document.getElementById('filter').value;
+        const byYear = document.getElementById('group-by-year').checked && !overview;
+        let count = 0;
+        const yearsMap = {};
+        const years = [];
+
+        books.filter(item => {
+            return !filter || filter === '' || (item.title + ' ' + item.summary.Summary + ' ' + item.year).toLowerCase().includes(filter.toLowerCase());
+        })
+            .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+            .forEach(item => {
+                const year = item.year;
+
+                if (!yearsMap[year]) {
+                    yearsMap[year] = {
+                        year,
+                        items: []
+                    }
+                    years.push(yearsMap[year]);
+                }
+
+                yearsMap[year].items.push(item);
+            });
+
+        years.sort((a, b) => parseInt(b.year) - parseInt(a.year)).forEach(function (yearObject) {
+            if (showDetails && byYear) {
+                html += '<div style="vertical-align: top; display: inline-block; border-left: 1px solid lightgrey; padding-top: 0px; margin: 4px;">';
+                html += '<div class="year" style="margin-top: 8px;">';
+                html += Math.abs(yearObject.year) + (yearObject.year < 0 ? ' BC' : '');
+                html += '</div>';
+            }
+            yearObject.items
+                .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+                .forEach(function (book) {
+                    count += 1;
+                    const year = parseInt(yearObject.year);
+                    if (showDetails) {
+                        html += '<div style="display: inline-block; vertical-align: top">';
+                    }
+                    let info = book.title + '\n\n' + book.summary.Summary;
+                    html += '<a target="_blank" href="' + book.links[0].path + '">';
+                    html += '<div class="book" title="' + info.split('\n').join('&#010;') + '">';
+                    const coverImage = book.imagePath ? book.imagePath : 'book.png';
+                    if (overview) {
+                        html += '<img class="cover" src="images/' + coverImage + '">';
+                    } else {
+                        html += '<img class="big-cover" src="images/' + coverImage + '">';
+                    }
+                    if (showDetails) {
+                        html += '<div style="vertical-align: middle; margin-top: -38px;  text-align: right; height: 46px;"> ';
+                        let places = placeOf(book);
+                        if (places.length > 0) {
+                            html += '<div style="display: inline-block; font-size: 80%; color: grey; width: 220px; margin-bottom: 7px; text-align: right; margin-right: 18px">';
+                            const flagMap = {};
+                            places.forEach(place => {
+                                let flag = flagImageOf(place);
+                                if (!flagMap[flag]) {
+                                    html += '<img src="' + flag + '" style="width: 32px; vertical-align: middle; border: 1px solid #d0d0d0; margin-right: 4px; border-radius: 3px;">&nbsp;&nbsp;&nbsp;';
+                                    flagMap[flag] = true;
+                                }
+                            });
+                            html += '</div>';
+                        }
+                        html += '</div>';
+                        html += '<div class="title" style="margin-top: 0px; margin-bottom: 0; padding: 0">';
+                        html += book.title;
+                        html += '</div>';
+                        html += '<div style="font-size: 80%; color: grey; width: 220px; margin-top: 0px; margin-bottom: 10px; text-align: center">';
+                        html += book.summary.Description;
+                        html += '</div>';
+                    }
+                    html += '</div>';
+                    html += '</a>';
+                    if (showDetails) {
+                        html += '</div>';
+                    }
+                });
+            if (showDetails && byYear) {
+                html += '</div>';
+            }
+        });
+
+        html += '</div>';
+
+        document.getElementById('summary').innerHTML = ' = <b>' + count + '</b> ' + (count === 1 ? ' entry' : ' entries') + ''
+
+        const div = document.getElementById('content');
+        div.innerHTML = html;
+    }
+
+    update();
+</script>
+
+</body>
+</html>
